@@ -86,26 +86,12 @@
 
 
 
-<meta name="description" content="Step 1: 构建libcurl静态库libcurl目前最新版：7.46.0
-请按照自己的需要适当更改文中出现的路径
-
-下载最新版libcurl
-解压（我把它解压到了C:\libcurl）
-以管理员权限打开CMD
-键入命令X:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\vcvars32.bat（X是VS的安装盘符）
-键入命令以">
+<meta name="description" content="libcurl 可是个好东西啊，可是该怎么在 VS2015 中使用呢？">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Visual Studio 2015 使用 libcurl">
 <meta property="og:url" content="http://yoursite.com/2016/07/30/Visual-Studio-2015-使用-libcurl/index.html">
 <meta property="og:site_name" content="MilitaryDoctor's Lab">
-<meta property="og:description" content="Step 1: 构建libcurl静态库libcurl目前最新版：7.46.0
-请按照自己的需要适当更改文中出现的路径
-
-下载最新版libcurl
-解压（我把它解压到了C:\libcurl）
-以管理员权限打开CMD
-键入命令X:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\vcvars32.bat（X是VS的安装盘符）
-键入命令以">
+<meta property="og:description" content="libcurl 可是个好东西啊，可是该怎么在 VS2015 中使用呢？">
 <meta property="og:image" content="http://img.blog.csdn.net/20160116130527619">
 <meta property="og:image" content="http://img.blog.csdn.net/20160116131143142">
 <meta property="og:image" content="http://img.blog.csdn.net/20160116131409606">
@@ -113,17 +99,10 @@
 <meta property="og:image" content="http://img.blog.csdn.net/20160116131813576">
 <meta property="og:image" content="http://img.blog.csdn.net/20160116134311399">
 <meta property="og:image" content="http://img.blog.csdn.net/20160116133535292">
-<meta property="og:updated_time" content="2016-07-30T11:11:21.269Z">
+<meta property="og:updated_time" content="2016-07-30T11:40:23.637Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Visual Studio 2015 使用 libcurl">
-<meta name="twitter:description" content="Step 1: 构建libcurl静态库libcurl目前最新版：7.46.0
-请按照自己的需要适当更改文中出现的路径
-
-下载最新版libcurl
-解压（我把它解压到了C:\libcurl）
-以管理员权限打开CMD
-键入命令X:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\vcvars32.bat（X是VS的安装盘符）
-键入命令以">
+<meta name="twitter:description" content="libcurl 可是个好东西啊，可是该怎么在 VS2015 中使用呢？">
 <meta name="twitter:image" content="http://img.blog.csdn.net/20160116130527619">
 
 
@@ -330,7 +309,8 @@
       
 
       
-        <h3 id="Step-1-构建libcurl静态库"><a href="#Step-1-构建libcurl静态库" class="headerlink" title="Step 1: 构建libcurl静态库"></a><strong>Step 1: 构建libcurl静态库</strong></h3><pre><code>libcurl目前最新版：7.46.0
+        <p>libcurl 可是个好东西啊，可是该怎么在 VS2015 中使用呢？<br><a id="more"></a></p>
+<h2 id="Step-1-构建libcurl静态库"><a href="#Step-1-构建libcurl静态库" class="headerlink" title="Step 1: 构建libcurl静态库"></a><strong>Step 1: 构建libcurl静态库</strong></h2><pre><code>libcurl 目前最新版：7.46.0
 请按照自己的需要适当更改文中出现的路径
 </code></pre><ol>
 <li>下载最新版<strong><a href="http://curl.haxx.se/latest.cgi?curl=tar.gz" target="_blank" rel="external">libcurl</a></strong></li>
@@ -342,18 +322,18 @@
 <li>构建完成后的静态库应该在<code>C:\libcurl\builds\libcurl-vc14-x86-release-static-ipv6-sspi-winssl</code>里，如图：<br><img src="http://img.blog.csdn.net/20160116130527619" alt="这里写图片描述"></li>
 </ol>
 <hr>
-<h3 id="Step-2-针对libcurl进行链接"><a href="#Step-2-针对libcurl进行链接" class="headerlink" title="Step 2: 针对libcurl进行链接"></a><strong>Step 2: 针对libcurl进行链接</strong></h3><ol>
+<h2 id="Step-2-针对libcurl进行链接"><a href="#Step-2-针对libcurl进行链接" class="headerlink" title="Step 2: 针对libcurl进行链接"></a><strong>Step 2: 针对libcurl进行链接</strong></h2><ol>
 <li>打开项目属性：菜单 -&gt; 项目(P) -&gt; 属性(P)</li>
-<li>配置属性 -&gt; C/C++ -&gt; 常规 -&gt; 附加包含目录<br> 添加：<code>C:\libcurl\builds\libcurl-vc14-x86-release-static-ipv6-sspi-winssl\include</code><br> 如图：<br> <img src="http://img.blog.csdn.net/20160116131143142" alt="这里写图片描述"></li>
-<li>配置属性 -&gt; C/C++ -&gt; 预处理器 -&gt; 预处理器定义<br> 加入 <code>CURL_STATICLIB</code><br> 如图：<br> <img src="http://img.blog.csdn.net/20160116131409606" alt="这里写图片描述"></li>
-<li>配置属性 -&gt; 链接器 -&gt; 常规 -&gt; 附加库目录<br> 添加：<code>C:\libcurl\builds\libcurl-vc14-x86-release-static-ipv6-sspi-winssl\lib</code><br> 如图：<br> <img src="http://img.blog.csdn.net/20160116131625936" alt="这里写图片描述"></li>
-<li>配置属性 -&gt; 链接器 -&gt; 输入 -&gt; 附加依赖项<br> 添加：<code>libcurl_a.lib</code><br> 如图：<br> <img src="http://img.blog.csdn.net/20160116131813576" alt="这里写图片描述"></li>
+<li>配置属性 -&gt; C/C++ -&gt; 常规 -&gt; 附加包含目录<br>添加：<code>C:\libcurl\builds\libcurl-vc14-x86-release-static-ipv6-sspi-winssl\include</code><br>如图：<br><img src="http://img.blog.csdn.net/20160116131143142" alt="这里写图片描述"></li>
+<li>配置属性 -&gt; C/C++ -&gt; 预处理器 -&gt; 预处理器定义<br>加入 <code>CURL_STATICLIB</code><br>如图：<br><img src="http://img.blog.csdn.net/20160116131409606" alt="这里写图片描述"></li>
+<li>配置属性 -&gt; 链接器 -&gt; 常规 -&gt; 附加库目录<br>添加：<code>C:\libcurl\builds\libcurl-vc14-x86-release-static-ipv6-sspi-winssl\lib</code><br>如图：<br><img src="http://img.blog.csdn.net/20160116131625936" alt="这里写图片描述"></li>
+<li>配置属性 -&gt; 链接器 -&gt; 输入 -&gt; 附加依赖项<br>添加：<code>libcurl_a.lib</code><br>如图：<br><img src="http://img.blog.csdn.net/20160116131813576" alt="这里写图片描述"></li>
 </ol>
 <hr>
-<h3 id="Step-3-上代码！"><a href="#Step-3-上代码！" class="headerlink" title="Step 3: 上代码！"></a><strong>Step 3: 上代码！</strong></h3><figure class="highlight c"><figcaption><span>++</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdafx.h"</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;curl/curl.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line">&#123;</div><div class="line">	CURL *curl;</div><div class="line">	CURLcode res;</div><div class="line"></div><div class="line">	curl = curl_easy_init();</div><div class="line">	<span class="keyword">if</span> (curl) &#123;</div><div class="line">		curl_easy_setopt(curl, CURLOPT_URL, <span class="string">"http://example.com"</span>);</div><div class="line">		<span class="comment">/* example.com is redirected, so we tell libcurl to follow redirection */</span></div><div class="line">		curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, <span class="number">1L</span>);</div><div class="line"></div><div class="line">		<span class="comment">/* Perform the request, res will get the return code */</span></div><div class="line">		res = curl_easy_perform(curl);</div><div class="line">		<span class="comment">/* Check for errors */</span></div><div class="line">		<span class="keyword">if</span> (res != CURLE_OK)</div><div class="line">			<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"curl_easy_perform() failed: %s\n"</span>,</div><div class="line">				curl_easy_strerror(res));</div><div class="line"></div><div class="line">		<span class="comment">/* always cleanup */</span></div><div class="line">		curl_easy_cleanup(curl);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Step-3-上代码！"><a href="#Step-3-上代码！" class="headerlink" title="Step 3: 上代码！"></a><strong>Step 3: 上代码！</strong></h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdafx.h"</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;curl/curl.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line">&#123;</div><div class="line">	CURL *curl;</div><div class="line">	CURLcode res;</div><div class="line"></div><div class="line">	curl = curl_easy_init();</div><div class="line">	<span class="keyword">if</span> (curl) &#123;</div><div class="line">		curl_easy_setopt(curl, CURLOPT_URL, <span class="string">"http://example.com"</span>);</div><div class="line">		<span class="comment">/* example.com is redirected, so we tell libcurl to follow redirection */</span></div><div class="line">		curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, <span class="number">1L</span>);</div><div class="line"></div><div class="line">		<span class="comment">/* Perform the request, res will get the return code */</span></div><div class="line">		res = curl_easy_perform(curl);</div><div class="line">		<span class="comment">/* Check for errors */</span></div><div class="line">		<span class="keyword">if</span> (res != CURLE_OK)</div><div class="line">			<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"curl_easy_perform() failed: %s\n"</span>,</div><div class="line">				curl_easy_strerror(res));</div><div class="line"></div><div class="line">		<span class="comment">/* always cleanup */</span></div><div class="line">		curl_easy_cleanup(curl);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><img src="http://img.blog.csdn.net/20160116134311399" alt="这里写图片描述"><br>（如果图片看不清，请<code>右键 - &gt;新标签页中打开图片</code>）<br>运行结果：<br><img src="http://img.blog.csdn.net/20160116133535292" alt="这里写图片描述"></p>
 <hr>
-<h3 id="最后说两句"><a href="#最后说两句" class="headerlink" title="最后说两句"></a><strong>最后说两句</strong></h3><p>本文参考自<a href="http://stackoverflow.com/questions/20171165/getting-libcurl-to-work-with-visual-studio-2013" target="_blank" rel="external">Stack overflow</a></p>
+<h2 id="最后说两句"><a href="#最后说两句" class="headerlink" title="最后说两句"></a><strong>最后说两句</strong></h2><p>本文参考自<a href="http://stackoverflow.com/questions/20171165/getting-libcurl-to-work-with-visual-studio-2013" target="_blank" rel="external">Stack overflow</a></p>
 <p><code>..\libcurl\docs\examples</code>里面有好多例子可以参考。</p>
 <p>有啥问题可以在评论区留言（我估计这篇文章没人会看。。。。）</p>
 
@@ -469,7 +449,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -549,31 +529,31 @@
             <ul class="links-of-blogroll-list">
               
                 <li class="links-of-blogroll-item">
-                  <a href="http://baka.pw/" title="Lyt99" target="_blank">Lyt99</a>
+                  <a href="http://baka.pw/" title="Lyt99" target="_blank"  rel="external nofollow">Lyt99</a>
                 </li>
               
                 <li class="links-of-blogroll-item">
-                  <a href="http://hbrw.in/" title="HBRW's Boxes" target="_blank">HBRW's Boxes</a>
+                  <a href="http://hbrw.in/" title="HBRW's Boxes" target="_blank"  rel="external nofollow">HBRW's Boxes</a>
                 </li>
               
                 <li class="links-of-blogroll-item">
-                  <a href="http://i.hstb1230.com/" title="Hstb的小世界" target="_blank">Hstb的小世界</a>
+                  <a href="http://i.hstb1230.com/" title="Hstb的小世界" target="_blank"  rel="external nofollow">Hstb的小世界</a>
                 </li>
               
                 <li class="links-of-blogroll-item">
-                  <a href="https://blog.lwl12.com/" title="LWL的自由天空" target="_blank">LWL的自由天空</a>
+                  <a href="https://blog.lwl12.com/" title="LWL的自由天空" target="_blank"  rel="external nofollow">LWL的自由天空</a>
                 </li>
               
                 <li class="links-of-blogroll-item">
-                  <a href="http://mecho.cc/" title="Mecho的小宇宙" target="_blank">Mecho的小宇宙</a>
+                  <a href="http://mecho.cc/" title="Mecho的小宇宙" target="_blank"  rel="external nofollow">Mecho的小宇宙</a>
                 </li>
               
                 <li class="links-of-blogroll-item">
-                  <a href="https://itroy.cc/" title="Troy的星球" target="_blank">Troy的星球</a>
+                  <a href="https://itroy.cc/" title="Troy的星球" target="_blank"  rel="external nofollow">Troy的星球</a>
                 </li>
               
                 <li class="links-of-blogroll-item">
-                  <a href="http://blog.xhxhbh.cn/" title="梦阳的后宫" target="_blank">梦阳的后宫</a>
+                  <a href="http://blog.xhxhbh.cn/" title="梦阳的后宫" target="_blank"  rel="external nofollow">梦阳的后宫</a>
                 </li>
               
             </ul>
@@ -589,7 +569,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-1-构建libcurl静态库"><span class="nav-number">1.</span> <span class="nav-text">Step 1: 构建libcurl静态库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-2-针对libcurl进行链接"><span class="nav-number">2.</span> <span class="nav-text">Step 2: 针对libcurl进行链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-3-上代码！"><span class="nav-number">3.</span> <span class="nav-text">Step 3: 上代码！</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后说两句"><span class="nav-number">4.</span> <span class="nav-text">最后说两句</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Step-1-构建libcurl静态库"><span class="nav-text">Step 1: 构建libcurl静态库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step-2-针对libcurl进行链接"><span class="nav-text">Step 2: 针对libcurl进行链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step-3-上代码！"><span class="nav-text">Step 3: 上代码！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后说两句"><span class="nav-text">最后说两句</span></a></li></ol></div>
             
           </div>
         </section>
@@ -616,12 +596,12 @@
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io" rel="external nofollow">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
     NexT.Pisces
   </a>
 </div>
@@ -722,7 +702,7 @@
       ds.id = 'duoshuo-script';
       ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
       ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
+      (document.getElementById('footer')[0]
       || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
   </script>
