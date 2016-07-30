@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-07-30T11:02:13.917Z</updated>
+  <updated>2016-07-30T11:11:21.269Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,10 +20,11 @@
     <link href="http://yoursite.com/2016/07/30/Visual-Studio-2015-%E4%BD%BF%E7%94%A8-libcurl/"/>
     <id>http://yoursite.com/2016/07/30/Visual-Studio-2015-使用-libcurl/</id>
     <published>2016-07-30T11:01:37.000Z</published>
-    <updated>2016-07-30T11:02:13.917Z</updated>
+    <updated>2016-07-30T11:11:21.269Z</updated>
     
-    <content type="html"><![CDATA[<p>#<strong>Step 1: 构建libcurl静态库</strong><br>    libcurl目前最新版：7.46.0<br>    请按照自己的需要适当更改文中出现的路径</p>
-<ol>
+    <content type="html"><![CDATA[<h3 id="Step-1-构建libcurl静态库"><a href="#Step-1-构建libcurl静态库" class="headerlink" title="Step 1: 构建libcurl静态库"></a><strong>Step 1: 构建libcurl静态库</strong></h3><pre><code>libcurl目前最新版：7.46.0
+请按照自己的需要适当更改文中出现的路径
+</code></pre><ol>
 <li>下载最新版<strong><a href="http://curl.haxx.se/latest.cgi?curl=tar.gz" target="_blank" rel="external">libcurl</a></strong></li>
 <li>解压（我把它解压到了<code>C:\libcurl</code>）</li>
 <li>以管理员权限打开<code>CMD</code></li>
@@ -33,8 +34,7 @@
 <li>构建完成后的静态库应该在<code>C:\libcurl\builds\libcurl-vc14-x86-release-static-ipv6-sspi-winssl</code>里，如图：<br><img src="http://img.blog.csdn.net/20160116130527619" alt="这里写图片描述"></li>
 </ol>
 <hr>
-<p>#<strong>Step 2: 针对libcurl进行链接</strong></p>
-<ol>
+<h3 id="Step-2-针对libcurl进行链接"><a href="#Step-2-针对libcurl进行链接" class="headerlink" title="Step 2: 针对libcurl进行链接"></a><strong>Step 2: 针对libcurl进行链接</strong></h3><ol>
 <li>打开项目属性：菜单 -&gt; 项目(P) -&gt; 属性(P)</li>
 <li>配置属性 -&gt; C/C++ -&gt; 常规 -&gt; 附加包含目录<br> 添加：<code>C:\libcurl\builds\libcurl-vc14-x86-release-static-ipv6-sspi-winssl\include</code><br> 如图：<br> <img src="http://img.blog.csdn.net/20160116131143142" alt="这里写图片描述"></li>
 <li>配置属性 -&gt; C/C++ -&gt; 预处理器 -&gt; 预处理器定义<br> 加入 <code>CURL_STATICLIB</code><br> 如图：<br> <img src="http://img.blog.csdn.net/20160116131409606" alt="这里写图片描述"></li>
@@ -42,20 +42,17 @@
 <li>配置属性 -&gt; 链接器 -&gt; 输入 -&gt; 附加依赖项<br> 添加：<code>libcurl_a.lib</code><br> 如图：<br> <img src="http://img.blog.csdn.net/20160116131813576" alt="这里写图片描述"></li>
 </ol>
 <hr>
-<p>#<strong>Step 3: 上代码！</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">#include &quot;stdafx.h&quot;</div><div class="line">#include &lt;stdio.h&gt;</div><div class="line">#include &lt;curl/curl.h&gt;</div><div class="line"></div><div class="line">int main(void)</div><div class="line">&#123;</div><div class="line">	CURL *curl;</div><div class="line">	CURLcode res;</div><div class="line"></div><div class="line">	curl = curl_easy_init();</div><div class="line">	if (curl) &#123;</div><div class="line">		curl_easy_setopt(curl, CURLOPT_URL, &quot;http://example.com&quot;);</div><div class="line">		/* example.com is redirected, so we tell libcurl to follow redirection */</div><div class="line">		curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);</div><div class="line"></div><div class="line">		/* Perform the request, res will get the return code */</div><div class="line">		res = curl_easy_perform(curl);</div><div class="line">		/* Check for errors */</div><div class="line">		if (res != CURLE_OK)</div><div class="line">			fprintf(stderr, &quot;curl_easy_perform() failed: %s\n&quot;,</div><div class="line">				curl_easy_strerror(res));</div><div class="line"></div><div class="line">		/* always cleanup */</div><div class="line">		curl_easy_cleanup(curl);</div><div class="line">	&#125;</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Step-3-上代码！"><a href="#Step-3-上代码！" class="headerlink" title="Step 3: 上代码！"></a><strong>Step 3: 上代码！</strong></h3><figure class="highlight c"><figcaption><span>++</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdafx.h"</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;curl/curl.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line">&#123;</div><div class="line">	CURL *curl;</div><div class="line">	CURLcode res;</div><div class="line"></div><div class="line">	curl = curl_easy_init();</div><div class="line">	<span class="keyword">if</span> (curl) &#123;</div><div class="line">		curl_easy_setopt(curl, CURLOPT_URL, <span class="string">"http://example.com"</span>);</div><div class="line">		<span class="comment">/* example.com is redirected, so we tell libcurl to follow redirection */</span></div><div class="line">		curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, <span class="number">1L</span>);</div><div class="line"></div><div class="line">		<span class="comment">/* Perform the request, res will get the return code */</span></div><div class="line">		res = curl_easy_perform(curl);</div><div class="line">		<span class="comment">/* Check for errors */</span></div><div class="line">		<span class="keyword">if</span> (res != CURLE_OK)</div><div class="line">			<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"curl_easy_perform() failed: %s\n"</span>,</div><div class="line">				curl_easy_strerror(res));</div><div class="line"></div><div class="line">		<span class="comment">/* always cleanup */</span></div><div class="line">		curl_easy_cleanup(curl);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><img src="http://img.blog.csdn.net/20160116134311399" alt="这里写图片描述"><br>（如果图片看不清，请<code>右键 - &gt;新标签页中打开图片</code>）<br>运行结果：<br><img src="http://img.blog.csdn.net/20160116133535292" alt="这里写图片描述"></p>
 <hr>
-<p>###<strong>最后说两句</strong><br>本文参考自<a href="http://stackoverflow.com/questions/20171165/getting-libcurl-to-work-with-visual-studio-2013" target="_blank" rel="external">Stack overflow</a></p>
+<h3 id="最后说两句"><a href="#最后说两句" class="headerlink" title="最后说两句"></a><strong>最后说两句</strong></h3><p>本文参考自<a href="http://stackoverflow.com/questions/20171165/getting-libcurl-to-work-with-visual-studio-2013" target="_blank" rel="external">Stack overflow</a></p>
 <p><code>..\libcurl\docs\examples</code>里面有好多例子可以参考。</p>
 <p>有啥问题可以在评论区留言（我估计这篇文章没人会看。。。。）</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;#&lt;strong&gt;Step 1: 构建libcurl静态库&lt;/strong&gt;&lt;br&gt;    libcurl目前最新版：7.46.0&lt;br&gt;    请按照自己的需要适当更改文中出现的路径&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;下载最新版&lt;strong&gt;&lt;a href=&quot;http://cu
+      &lt;h3 id=&quot;Step-1-构建libcurl静态库&quot;&gt;&lt;a href=&quot;#Step-1-构建libcurl静态库&quot; class=&quot;headerlink&quot; title=&quot;Step 1: 构建libcurl静态库&quot;&gt;&lt;/a&gt;&lt;strong&gt;Step 1: 构建libcurl静态库
     
     </summary>
     
@@ -73,33 +70,28 @@
     <link href="http://yoursite.com/2016/07/30/%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96Unix%E6%97%B6%E9%97%B4%E6%88%B3-C/"/>
     <id>http://yoursite.com/2016/07/30/如何获取Unix时间戳-C/</id>
     <published>2016-07-30T11:00:24.000Z</published>
-    <updated>2016-07-30T11:02:22.429Z</updated>
+    <updated>2016-07-30T11:10:56.179Z</updated>
     
-    <content type="html"><![CDATA[<p>##<strong>什么是Unix时间戳</strong>？</p>
-<blockquote>
+    <content type="html"><![CDATA[<h3 id="什么是Unix时间戳？"><a href="#什么是Unix时间戳？" class="headerlink" title="什么是Unix时间戳？"></a><strong>什么是Unix时间戳</strong>？</h3><blockquote>
 <p>Unix时间戳(Unix timestamp)，或称Unix时间(Unix time)、POSIX时间(POSIX time)，是一种时间表示方式，定义为从<strong>格林威治时间1970年01月01日00时00分00秒</strong>起至现在的总秒数。Unix时间戳不仅被使用在Unix系统、类Unix系统中，也在许多其他操作系统中被广泛采用</p>
 </blockquote>
-<p>##<strong>2038年1月19日会发生什么</strong>？</p>
-<blockquote>
+<h3 id="2038年1月19日会发生什么？"><a href="#2038年1月19日会发生什么？" class="headerlink" title="2038年1月19日会发生什么？"></a><strong>2038年1月19日会发生什么</strong>？</h3><blockquote>
 <p>在2038年1月19日，由于32位整形溢出，Unix时间戳会停止工作。在这个大灾难前，数百万计的应用程序采取新的约定时间的方式，要么升级到64位版本。</p>
 </blockquote>
-<p>##<strong>代码示例</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//Code::Blocks 编译通过；需开启 &quot;-std=c++11&quot; 编译开关</div><div class="line">#include &lt;ctime&gt;</div><div class="line">#include &lt;iostream&gt;</div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    std::time_t result = std::time(nullptr);</div><div class="line">    std::cout &lt;&lt; std::asctime(std::localtime(&amp;result))</div><div class="line">              &lt;&lt; result &lt;&lt; &quot; seconds since the Epoch\n&quot;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>###运行结果：</p>
-<blockquote>
+<h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a><strong>代码示例</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//Code::Blocks 编译通过；需开启 &quot;-std=c++11&quot; 编译开关</div><div class="line">#include &lt;ctime&gt;</div><div class="line">#include &lt;iostream&gt;</div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    std::time_t result = std::time(nullptr);</div><div class="line">    std::cout &lt;&lt; std::asctime(std::localtime(&amp;result))</div><div class="line">              &lt;&lt; result &lt;&lt; &quot; seconds since the Epoch\n&quot;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="运行结果："><a href="#运行结果：" class="headerlink" title="#运行结果："></a>#运行结果：</h3><blockquote>
 <p>Sun Nov 22 11:48:58 2015<br>1448164138 seconds since the Epoch</p>
 </blockquote>
 <p>之所以开启”-std=c++11”编译开关的原因是因为nullptr是<strong>C++11</strong>语言标准用来表示空指针的常量值。</p>
 <p>不使用C++11标准的话，你还可以这样写：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//Code::Blocks编译通过</div><div class="line">#include&lt;iostream&gt;</div><div class="line">#include&lt;ctime&gt;</div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    std::time_t t = std::time(0);  // t is an integer type</div><div class="line">    std::cout &lt;&lt; t &lt;&lt; &quot; seconds since 01-Jan-1970\n&quot;;</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight c"><figcaption><span>++</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//Code::Blocks编译通过</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;ctime&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="built_in">std</span>::<span class="keyword">time_t</span> t = <span class="built_in">std</span>::time(<span class="number">0</span>);  <span class="comment">// t is an integer type</span></div><div class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; t &lt;&lt; <span class="string">" seconds since 01-Jan-1970\n"</span>;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>代码引用自 <a href="http://stackoverflow.com/questions/6012663/get-unix-timestamp-with-c" target="_blank" rel="external">Get Unix timestamp with C++</a></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;##&lt;strong&gt;什么是Unix时间戳&lt;/strong&gt;？&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Unix时间戳(Unix timestamp)，或称Unix时间(Unix time)、POSIX时间(POSIX time)，是一种时间表示方式，定义为从&lt;strong&gt;
+      &lt;h3 id=&quot;什么是Unix时间戳？&quot;&gt;&lt;a href=&quot;#什么是Unix时间戳？&quot; class=&quot;headerlink&quot; title=&quot;什么是Unix时间戳？&quot;&gt;&lt;/a&gt;&lt;strong&gt;什么是Unix时间戳&lt;/strong&gt;？&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;Unix
     
     </summary>
     

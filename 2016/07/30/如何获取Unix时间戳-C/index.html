@@ -86,34 +86,28 @@
 
 
 
-<meta name="description" content="##什么是Unix时间戳？
-
+<meta name="description" content="什么是Unix时间戳？
 Unix时间戳(Unix timestamp)，或称Unix时间(Unix time)、POSIX时间(POSIX time)，是一种时间表示方式，定义为从格林威治时间1970年01月01日00时00分00秒起至现在的总秒数。Unix时间戳不仅被使用在Unix系统、类Unix系统中，也在许多其他操作系统中被广泛采用
 
-##2038年1月19日会发生什么？
-
-在2038">
+2038年1月19日会发生什么？
+在2038年1月19日">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何获取Unix时间戳[C++]">
 <meta property="og:url" content="http://yoursite.com/2016/07/30/如何获取Unix时间戳-C/index.html">
 <meta property="og:site_name" content="MilitaryDoctor's Lab">
-<meta property="og:description" content="##什么是Unix时间戳？
-
+<meta property="og:description" content="什么是Unix时间戳？
 Unix时间戳(Unix timestamp)，或称Unix时间(Unix time)、POSIX时间(POSIX time)，是一种时间表示方式，定义为从格林威治时间1970年01月01日00时00分00秒起至现在的总秒数。Unix时间戳不仅被使用在Unix系统、类Unix系统中，也在许多其他操作系统中被广泛采用
 
-##2038年1月19日会发生什么？
-
-在2038">
-<meta property="og:updated_time" content="2016-07-30T11:02:22.429Z">
+2038年1月19日会发生什么？
+在2038年1月19日">
+<meta property="og:updated_time" content="2016-07-30T11:10:56.179Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何获取Unix时间戳[C++]">
-<meta name="twitter:description" content="##什么是Unix时间戳？
-
+<meta name="twitter:description" content="什么是Unix时间戳？
 Unix时间戳(Unix timestamp)，或称Unix时间(Unix time)、POSIX时间(POSIX time)，是一种时间表示方式，定义为从格林威治时间1970年01月01日00时00分00秒起至现在的总秒数。Unix时间戳不仅被使用在Unix系统、类Unix系统中，也在许多其他操作系统中被广泛采用
 
-##2038年1月19日会发生什么？
-
-在2038">
+2038年1月19日会发生什么？
+在2038年1月19日">
 
 
 
@@ -319,23 +313,19 @@ Unix时间戳(Unix timestamp)，或称Unix时间(Unix time)、POSIX时间(POSIX 
       
 
       
-        <p>##<strong>什么是Unix时间戳</strong>？</p>
-<blockquote>
+        <h3 id="什么是Unix时间戳？"><a href="#什么是Unix时间戳？" class="headerlink" title="什么是Unix时间戳？"></a><strong>什么是Unix时间戳</strong>？</h3><blockquote>
 <p>Unix时间戳(Unix timestamp)，或称Unix时间(Unix time)、POSIX时间(POSIX time)，是一种时间表示方式，定义为从<strong>格林威治时间1970年01月01日00时00分00秒</strong>起至现在的总秒数。Unix时间戳不仅被使用在Unix系统、类Unix系统中，也在许多其他操作系统中被广泛采用</p>
 </blockquote>
-<p>##<strong>2038年1月19日会发生什么</strong>？</p>
-<blockquote>
+<h3 id="2038年1月19日会发生什么？"><a href="#2038年1月19日会发生什么？" class="headerlink" title="2038年1月19日会发生什么？"></a><strong>2038年1月19日会发生什么</strong>？</h3><blockquote>
 <p>在2038年1月19日，由于32位整形溢出，Unix时间戳会停止工作。在这个大灾难前，数百万计的应用程序采取新的约定时间的方式，要么升级到64位版本。</p>
 </blockquote>
-<p>##<strong>代码示例</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//Code::Blocks 编译通过；需开启 &quot;-std=c++11&quot; 编译开关</div><div class="line">#include &lt;ctime&gt;</div><div class="line">#include &lt;iostream&gt;</div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    std::time_t result = std::time(nullptr);</div><div class="line">    std::cout &lt;&lt; std::asctime(std::localtime(&amp;result))</div><div class="line">              &lt;&lt; result &lt;&lt; &quot; seconds since the Epoch\n&quot;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>###运行结果：</p>
-<blockquote>
+<h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a><strong>代码示例</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//Code::Blocks 编译通过；需开启 &quot;-std=c++11&quot; 编译开关</div><div class="line">#include &lt;ctime&gt;</div><div class="line">#include &lt;iostream&gt;</div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    std::time_t result = std::time(nullptr);</div><div class="line">    std::cout &lt;&lt; std::asctime(std::localtime(&amp;result))</div><div class="line">              &lt;&lt; result &lt;&lt; &quot; seconds since the Epoch\n&quot;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="运行结果："><a href="#运行结果：" class="headerlink" title="#运行结果："></a>#运行结果：</h3><blockquote>
 <p>Sun Nov 22 11:48:58 2015<br>1448164138 seconds since the Epoch</p>
 </blockquote>
 <p>之所以开启”-std=c++11”编译开关的原因是因为nullptr是<strong>C++11</strong>语言标准用来表示空指针的常量值。</p>
 <p>不使用C++11标准的话，你还可以这样写：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//Code::Blocks编译通过</div><div class="line">#include&lt;iostream&gt;</div><div class="line">#include&lt;ctime&gt;</div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    std::time_t t = std::time(0);  // t is an integer type</div><div class="line">    std::cout &lt;&lt; t &lt;&lt; &quot; seconds since 01-Jan-1970\n&quot;;</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight c"><figcaption><span>++</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//Code::Blocks编译通过</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;ctime&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="built_in">std</span>::<span class="keyword">time_t</span> t = <span class="built_in">std</span>::time(<span class="number">0</span>);  <span class="comment">// t is an integer type</span></div><div class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; t &lt;&lt; <span class="string">" seconds since 01-Jan-1970\n"</span>;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>代码引用自 <a href="http://stackoverflow.com/questions/6012663/get-unix-timestamp-with-c" target="_blank" rel="external">Get Unix timestamp with C++</a></p>
 
       
@@ -572,7 +562,7 @@ Unix时间戳(Unix timestamp)，或称Unix时间(Unix time)、POSIX时间(POSIX 
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是Unix时间戳？"><span class="nav-number">1.</span> <span class="nav-text">什么是Unix时间戳？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2038年1月19日会发生什么？"><span class="nav-number">2.</span> <span class="nav-text">2038年1月19日会发生什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码示例"><span class="nav-number">3.</span> <span class="nav-text">代码示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行结果："><span class="nav-number">4.</span> <span class="nav-text">#运行结果：</span></a></li></ol></div>
             
           </div>
         </section>
