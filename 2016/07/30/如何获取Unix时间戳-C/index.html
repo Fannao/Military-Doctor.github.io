@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="C++,编程," />
 
 
 
@@ -86,15 +86,34 @@
 
 
 
-<meta name="description" content="Talk is cheap, show me the code">
-<meta property="og:type" content="website">
-<meta property="og:title" content="MilitaryDoctor's Lab">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="##什么是Unix时间戳？
+
+Unix时间戳(Unix timestamp)，或称Unix时间(Unix time)、POSIX时间(POSIX time)，是一种时间表示方式，定义为从格林威治时间1970年01月01日00时00分00秒起至现在的总秒数。Unix时间戳不仅被使用在Unix系统、类Unix系统中，也在许多其他操作系统中被广泛采用
+
+##2038年1月19日会发生什么？
+
+在2038">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何获取Unix时间戳[C++]">
+<meta property="og:url" content="http://yoursite.com/2016/07/30/如何获取Unix时间戳-C/index.html">
 <meta property="og:site_name" content="MilitaryDoctor's Lab">
-<meta property="og:description" content="Talk is cheap, show me the code">
+<meta property="og:description" content="##什么是Unix时间戳？
+
+Unix时间戳(Unix timestamp)，或称Unix时间(Unix time)、POSIX时间(POSIX time)，是一种时间表示方式，定义为从格林威治时间1970年01月01日00时00分00秒起至现在的总秒数。Unix时间戳不仅被使用在Unix系统、类Unix系统中，也在许多其他操作系统中被广泛采用
+
+##2038年1月19日会发生什么？
+
+在2038">
+<meta property="og:updated_time" content="2016-07-30T11:02:22.429Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MilitaryDoctor's Lab">
-<meta name="twitter:description" content="Talk is cheap, show me the code">
+<meta name="twitter:title" content="如何获取Unix时间戳[C++]">
+<meta name="twitter:description" content="##什么是Unix时间戳？
+
+Unix时间戳(Unix timestamp)，或称Unix时间(Unix time)、POSIX时间(POSIX time)，是一种时间表示方式，定义为从格林威治时间1970年01月01日00时00分00秒起至现在的总秒数。Unix时间戳不仅被使用在Unix系统、类Unix系统中，也在许多其他操作系统中被广泛采用
+
+##2038年1月19日会发生什么？
+
+在2038">
 
 
 
@@ -115,9 +134,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/07/30/如何获取Unix时间戳-C/"/>
 
-  <title> MilitaryDoctor's Lab </title>
+  <title> 如何获取Unix时间戳[C++] | MilitaryDoctor's Lab </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -144,9 +163,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -233,9 +250,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -255,137 +272,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/07/30/Visual-Studio-2015-使用-libcurl/" itemprop="url">
-                  Visual Studio 2015 使用 libcurl
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-30T19:01:37+08:00" content="2016-07-30">
-              2016-07-30
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/30/Visual-Studio-2015-使用-libcurl/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/30/Visual-Studio-2015-使用-libcurl/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>#<strong>Step 1: 构建libcurl静态库</strong><br>    libcurl目前最新版：7.46.0<br>    请按照自己的需要适当更改文中出现的路径</p>
-<ol>
-<li>下载最新版<strong><a href="http://curl.haxx.se/latest.cgi?curl=tar.gz" target="_blank" rel="external">libcurl</a></strong></li>
-<li>解压（我把它解压到了<code>C:\libcurl</code>）</li>
-<li>以管理员权限打开<code>CMD</code></li>
-<li>键入命令<code>X:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\vcvars32.bat</code>（X是VS的安装盘符）</li>
-<li>键入命令以切换到libcurl目录<code>cd C:\libcurl\winbuild</code></li>
-<li><code>nmake /f Makefile.vc mode=static VC=14</code></li>
-<li>构建完成后的静态库应该在<code>C:\libcurl\builds\libcurl-vc14-x86-release-static-ipv6-sspi-winssl</code>里，如图：<br><img src="http://img.blog.csdn.net/20160116130527619" alt="这里写图片描述"></li>
-</ol>
-<hr>
-<p>#<strong>Step 2: 针对libcurl进行链接</strong></p>
-<ol>
-<li>打开项目属性：菜单 -&gt; 项目(P) -&gt; 属性(P)</li>
-<li>配置属性 -&gt; C/C++ -&gt; 常规 -&gt; 附加包含目录<br> 添加：<code>C:\libcurl\builds\libcurl-vc14-x86-release-static-ipv6-sspi-winssl\include</code><br> 如图：<br> <img src="http://img.blog.csdn.net/20160116131143142" alt="这里写图片描述"></li>
-<li>配置属性 -&gt; C/C++ -&gt; 预处理器 -&gt; 预处理器定义<br> 加入 <code>CURL_STATICLIB</code><br> 如图：<br> <img src="http://img.blog.csdn.net/20160116131409606" alt="这里写图片描述"></li>
-<li>配置属性 -&gt; 链接器 -&gt; 常规 -&gt; 附加库目录<br> 添加：<code>C:\libcurl\builds\libcurl-vc14-x86-release-static-ipv6-sspi-winssl\lib</code><br> 如图：<br> <img src="http://img.blog.csdn.net/20160116131625936" alt="这里写图片描述"></li>
-<li>配置属性 -&gt; 链接器 -&gt; 输入 -&gt; 附加依赖项<br> 添加：<code>libcurl_a.lib</code><br> 如图：<br> <img src="http://img.blog.csdn.net/20160116131813576" alt="这里写图片描述"></li>
-</ol>
-<hr>
-<p>#<strong>Step 3: 上代码！</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">#include &quot;stdafx.h&quot;</div><div class="line">#include &lt;stdio.h&gt;</div><div class="line">#include &lt;curl/curl.h&gt;</div><div class="line"></div><div class="line">int main(void)</div><div class="line">&#123;</div><div class="line">	CURL *curl;</div><div class="line">	CURLcode res;</div><div class="line"></div><div class="line">	curl = curl_easy_init();</div><div class="line">	if (curl) &#123;</div><div class="line">		curl_easy_setopt(curl, CURLOPT_URL, &quot;http://example.com&quot;);</div><div class="line">		/* example.com is redirected, so we tell libcurl to follow redirection */</div><div class="line">		curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);</div><div class="line"></div><div class="line">		/* Perform the request, res will get the return code */</div><div class="line">		res = curl_easy_perform(curl);</div><div class="line">		/* Check for errors */</div><div class="line">		if (res != CURLE_OK)</div><div class="line">			fprintf(stderr, &quot;curl_easy_perform() failed: %s\n&quot;,</div><div class="line">				curl_easy_strerror(res));</div><div class="line"></div><div class="line">		/* always cleanup */</div><div class="line">		curl_easy_cleanup(curl);</div><div class="line">	&#125;</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><img src="http://img.blog.csdn.net/20160116134311399" alt="这里写图片描述"><br>（如果图片看不清，请<code>右键 - &gt;新标签页中打开图片</code>）<br>运行结果：<br><img src="http://img.blog.csdn.net/20160116133535292" alt="这里写图片描述"></p>
-<hr>
-<p>###<strong>最后说两句</strong><br>本文参考自<a href="http://stackoverflow.com/questions/20171165/getting-libcurl-to-work-with-visual-studio-2013" target="_blank" rel="external">Stack overflow</a></p>
-<p><code>..\libcurl\docs\examples</code>里面有好多例子可以参考。</p>
-<p>有啥问题可以在评论区留言（我估计这篇文章没人会看。。。。）</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/30/如何获取Unix时间戳-C/" itemprop="url">
-                  如何获取Unix时间戳[C++]
-                </a>
+                如何获取Unix时间戳[C++]
               
             
           </h1>
@@ -432,9 +319,7 @@
       
 
       
-        
-          
-            <p>##<strong>什么是Unix时间戳</strong>？</p>
+        <p>##<strong>什么是Unix时间戳</strong>？</p>
 <blockquote>
 <p>Unix时间戳(Unix timestamp)，或称Unix时间(Unix time)、POSIX时间(POSIX time)，是一种时间表示方式，定义为从<strong>格林威治时间1970年01月01日00时00分00秒</strong>起至现在的总秒数。Unix时间戳不仅被使用在Unix系统、类Unix系统中，也在许多其他操作系统中被广泛采用</p>
 </blockquote>
@@ -453,278 +338,65 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//Code::Blocks编译通过</div><div class="line">#include&lt;iostream&gt;</div><div class="line">#include&lt;ctime&gt;</div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    std::time_t t = std::time(0);  // t is an integer type</div><div class="line">    std::cout &lt;&lt; t &lt;&lt; &quot; seconds since 01-Jan-1970\n&quot;;</div><div class="line">    return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>代码引用自 <a href="http://stackoverflow.com/questions/6012663/get-unix-timestamp-with-c" target="_blank" rel="external">Get Unix timestamp with C++</a></p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/30/My-Hello-World/" itemprop="url">
-                  My Hello World!
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-30T16:16:05+08:00" content="2016-07-30">
-              2016-07-30
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/one/" itemprop="url" rel="index">
-                    <span itemprop="name">one</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/one/two/" itemprop="url" rel="index">
-                    <span itemprop="name">two</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
+            <a href="/tags/C/" rel="tag">#C++</a>
           
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/30/My-Hello-World/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/30/My-Hello-World/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
+            <a href="/tags/编程/" rel="tag">#编程</a>
           
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>###Hi Human<br>I am a robot. </p>
-<p>233不开玩笑了 </p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/07/30/My-Hello-World/" rel="next" title="My Hello World!">
+                <i class="fa fa-chevron-left"></i> My Hello World!
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2016/07/30/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-30T16:10:50+08:00" content="2016-07-30">
-              2016-07-30
-            </time>
-          </span>
-
-          
-
-          
+              <a href="/2016/07/30/Visual-Studio-2015-使用-libcurl/" rel="prev" title="Visual Studio 2015 使用 libcurl">
+                Visual Studio 2015 使用 libcurl <i class="fa fa-chevron-right"></i>
+              </a>
             
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/30/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/30/hello-world/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -732,6 +404,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/07/30/如何获取Unix时间戳-C/"
+           data-title="如何获取Unix时间戳[C++]" data-url="http://yoursite.com/2016/07/30/如何获取Unix时间戳-C/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -751,8 +431,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -877,6 +566,17 @@
       </section>
 
       
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
 
     </div>
   </aside>
@@ -979,6 +679,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
