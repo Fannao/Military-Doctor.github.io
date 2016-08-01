@@ -94,7 +94,7 @@ Unix时间戳(Unix timestamp)，或称Unix时间(Unix time)、POSIX时间(POSIX 
 <meta property="og:site_name" content="MilitaryDoctor's Lab">
 <meta property="og:description" content="什么是Unix时间戳？
 Unix时间戳(Unix timestamp)，或称Unix时间(Unix time)、POSIX时间(POSIX time)，是一种时间表示方式，定义为从格林威治时间1970年01月01日00时00分00秒起至现在的总秒数。Unix时间戳不仅被使用在Unix系统、类Unix系统中，也在许多其他操作系统中被广泛采用">
-<meta property="og:updated_time" content="2016-07-30T11:39:57.537Z">
+<meta property="og:updated_time" content="2016-07-30T11:50:13.614Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何获取Unix时间戳[C++]">
 <meta name="twitter:description" content="什么是Unix时间戳？
@@ -312,7 +312,7 @@ Unix时间戳(Unix timestamp)，或称Unix时间(Unix time)、POSIX时间(POSIX 
 <p>在2038年1月19日，由于32位整形溢出，Unix时间戳会停止工作。在这个大灾难前，数百万计的应用程序采取新的约定时间的方式，要么升级到64位版本。</p>
 </blockquote>
 <h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a><strong>代码示例</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//Code::Blocks 编译通过；需开启 &quot;-std=c++11&quot; 编译开关</div><div class="line">#include &lt;ctime&gt;</div><div class="line">#include &lt;iostream&gt;</div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    std::time_t result = std::time(nullptr);</div><div class="line">    std::cout &lt;&lt; std::asctime(std::localtime(&amp;result))</div><div class="line">              &lt;&lt; result &lt;&lt; &quot; seconds since the Epoch\n&quot;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="运行结果："><a href="#运行结果：" class="headerlink" title="#运行结果："></a>#运行结果：</h3><blockquote>
+<h3 id="运行结果："><a href="#运行结果：" class="headerlink" title="运行结果："></a>运行结果：</h3><blockquote>
 <p>Sun Nov 22 11:48:58 2015<br>1448164138 seconds since the Epoch</p>
 </blockquote>
 <p>之所以开启”-std=c++11”编译开关的原因是因为nullptr是<strong>C++11</strong>语言标准用来表示空指针的常量值。</p>
@@ -434,7 +434,7 @@ Unix时间戳(Unix timestamp)，或称Unix时间(Unix time)、POSIX时间(POSIX 
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -451,7 +451,7 @@ Unix时间戳(Unix timestamp)，或称Unix时间(Unix time)、POSIX时间(POSIX 
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -554,7 +554,7 @@ Unix时间戳(Unix timestamp)，或称Unix时间(Unix time)、POSIX时间(POSIX 
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是Unix时间戳？"><span class="nav-text">什么是Unix时间戳？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2038年1月19日会发生什么？"><span class="nav-text">2038年1月19日会发生什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码示例"><span class="nav-text">代码示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行结果："><span class="nav-text">#运行结果：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是Unix时间戳？"><span class="nav-text">什么是Unix时间戳？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2038年1月19日会发生什么？"><span class="nav-text">2038年1月19日会发生什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码示例"><span class="nav-text">代码示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行结果："><span class="nav-text">运行结果：</span></a></li></ol></div>
             
           </div>
         </section>
