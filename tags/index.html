@@ -2,14 +2,15 @@
 
 
 
-  
 
-
-<html class="theme-next pisces use-motion">
+<html class="theme-next pisces" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
 
 
 
@@ -27,9 +28,12 @@
 
 
 
+
+
+
   
   
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -63,9 +67,9 @@
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="Hexo, NexT" />
@@ -74,57 +78,62 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="MilitaryDoctor's Lab" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="Junyi 的实验室" type="application/atom+xml" />
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
 
 
 
 
 
 
-<meta name="description" content="Talk is cheap, show me the code">
+<meta name="description" content="Woo~ Amazing!">
 <meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
-<meta property="og:site_name" content="MilitaryDoctor's Lab">
-<meta property="og:description" content="Talk is cheap, show me the code">
-<meta property="og:updated_time" content="2016-07-30T10:51:29.223Z">
+<meta property="og:title" content="小标签们 (≖ ‿ ≖)✧">
+<meta property="og:url" content="http://www.junyi.pw/tags/index.html">
+<meta property="og:site_name" content="Junyi 的实验室">
+<meta property="og:description" content="Woo~ Amazing!">
+<meta property="og:updated_time" content="2017-04-30T07:47:00.369Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="标签">
-<meta name="twitter:description" content="Talk is cheap, show me the code">
+<meta name="twitter:title" content="小标签们 (≖ ‿ ≖)✧">
+<meta name="twitter:description" content="Woo~ Amazing!">
 
 
 
-<script type="text/javascript" id="hexo.configuration">
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    root: '/',
     scheme: 'Pisces',
-    sidebar: {"position":"left","display":"post"},
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
-    motion: true,
+    motion: false,
     duoshuo: {
-      userId: 0,
+      userId: '0',
       author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
 
 
 
+  <link rel="canonical" href="http://www.junyi.pw/tags/"/>
 
-  <link rel="canonical" href="http://yoursite.com/tags/"/>
 
-  <title>
-  
 
-  
-    标签 | MilitaryDoctor's Lab
-  
-</title>
+
+
+  <title>小标签们 (≖ ‿ ≖)✧ | Junyi 的实验室</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -138,9 +147,13 @@
 
 
 
+
+
+
   <div style="display: none;">
-    <script src="//s6.cnzz.com/stat.php?id=1260025159&web_id=1260025159" type="text/javascript"></script>
+    <script src="//s95.cnzz.com/z_stat.php?id=1260025159&web_id=1260025159" language="JavaScript"></script>
   </div>
+
 
 
 
@@ -151,29 +164,33 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container sidebar-position-left  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">MilitaryDoctor's Lab</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Junyi 的实验室</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">有趣的灵魂终将相遇</p>
+      
   </div>
-  <p class="site-subtitle">Keep going</p>
-</div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 <nav class="site-nav">
@@ -189,6 +206,16 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
           </a>
         </li>
       
@@ -222,6 +249,16 @@
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
 
       
     </ul>
@@ -229,6 +266,8 @@
 
   
 </nav>
+
+
 
  </div>
     </header>
@@ -240,14 +279,22 @@
             
 
   <div id="posts" class="posts-expand">
+  <header class="post-header">
+
+	<h1 class="post-title" itemprop="name headline">小标签们 (≖ ‿ ≖)✧</h1>
+
+
+
+</header>
+
     
     
       <div class="tag-cloud">
         <div class="tag-cloud-title">
-            目前共计 6 个标签
+            目前共计 12 个标签
         </div>
         <div class="tag-cloud-tags">
-          <a href="/tags/C/" style="font-size: 30px; color: #111">C++</a> <a href="/tags/Games/" style="font-size: 12px; color: #ccc">Games</a> <a href="/tags/PS2/" style="font-size: 12px; color: #ccc">PS2</a> <a href="/tags/libcurl/" style="font-size: 12px; color: #ccc">libcurl</a> <a href="/tags/编程/" style="font-size: 30px; color: #111">编程</a> <a href="/tags/软件分享/" style="font-size: 12px; color: #ccc">软件分享</a>
+          <a href="/tags/Algorithm/" style="font-size: 12px; color: #ccc">Algorithm</a> <a href="/tags/Bilibili/" style="font-size: 12px; color: #ccc">Bilibili</a> <a href="/tags/C/" style="font-size: 30px; color: #111">C++</a> <a href="/tags/Network/" style="font-size: 12px; color: #ccc">Network</a> <a href="/tags/Socket/" style="font-size: 12px; color: #ccc">Socket</a> <a href="/tags/Visual-Studio/" style="font-size: 12px; color: #ccc">Visual Studio</a> <a href="/tags/a/" style="font-size: 12px; color: #ccc">a</a> <a href="/tags/b/" style="font-size: 12px; color: #ccc">b</a> <a href="/tags/libcurl/" style="font-size: 12px; color: #ccc">libcurl</a> <a href="/tags/none/" style="font-size: 12px; color: #ccc">none</a> <a href="/tags/教程/" style="font-size: 21px; color: #6f6f6f">教程</a> <a href="/tags/软件推荐/" style="font-size: 12px; color: #ccc">软件推荐</a>
         </div>
       </div>
     
@@ -259,6 +306,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
 
         </div>
         
@@ -279,35 +332,44 @@
 
       
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.jpg"
+               src="/images/avatar.png"
                alt="Junyi" />
           <p class="site-author-name" itemprop="name">Junyi</p>
-          <p class="site-description motion-element" itemprop="description">Talk is cheap, show me the code</p>
+           
+              <p class="site-description motion-element" itemprop="description">Woo~ Amazing!</p>
+          
         </div>
         <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">4</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
-          </div>
 
           
-            <div class="site-state-item site-state-categories">
-              
-                <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">分类</span>
-              
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
             </div>
           
 
           
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
             <div class="site-state-item site-state-tags">
-              <a href="/tags">
-                <span class="site-state-item-count">6</span>
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -337,20 +399,11 @@
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://twitter.com/Junyi233" target="_blank" title="Twitter">
+                <a href="https://github.com/Military-Doctor/" target="_blank" title="WeiBo">
                   
-                    <i class="fa fa-fw fa-twitter"></i>
+                    <i class="fa fa-fw fa-globe"></i>
                   
-                  Twitter
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://weibo.com/1669434281" target="_blank" title="Weibo">
-                  
-                    <i class="fa fa-fw fa-weibo"></i>
-                  
-                  Weibo
+                  WeiBo
                 </a>
               </span>
             
@@ -370,38 +423,27 @@
             <ul class="links-of-blogroll-list">
               
                 <li class="links-of-blogroll-item">
-                  <a href="http://baka.pw/" title="Lyt99" target="_blank"  rel="external nofollow">Lyt99</a>
+                  <a href="http://www.hbrw.in/" title="HBRW's Boxes" target="_blank">HBRW's Boxes</a>
                 </li>
               
                 <li class="links-of-blogroll-item">
-                  <a href="http://hbrw.in/" title="HBRW's Boxes" target="_blank"  rel="external nofollow">HBRW's Boxes</a>
+                  <a href="https://i.hstb1230.com/" title="Hstb的小世界" target="_blank">Hstb的小世界</a>
                 </li>
               
                 <li class="links-of-blogroll-item">
-                  <a href="http://i.hstb1230.com/" title="Hstb的小世界" target="_blank"  rel="external nofollow">Hstb的小世界</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://blog.lwl12.com/" title="LWL的自由天空" target="_blank"  rel="external nofollow">LWL的自由天空</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://mecho.cc/" title="Mecho的小宇宙" target="_blank"  rel="external nofollow">Mecho的小宇宙</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="https://itroy.cc/" title="Troy的星球" target="_blank"  rel="external nofollow">Troy的星球</a>
-                </li>
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://blog.xhxhbh.cn/" title="梦阳的后宫" target="_blank"  rel="external nofollow">梦阳的后宫</a>
+                  <a href="https://srun.in/" title="梦阳的后宫" target="_blank">梦阳的后宫</a>
                 </li>
               
             </ul>
           </div>
         
 
+        
+
+
       </section>
+
+      
 
       
 
@@ -418,23 +460,25 @@
         <div class="copyright" >
   
   &copy;  2015 - 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Junyi</span>
 </div>
 
+
 <div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io" rel="external nofollow">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Pisces
   </a>
 </div>
+
 
         
 
@@ -442,9 +486,13 @@
       </div>
     </footer>
 
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
   </div>
 
   
@@ -467,41 +515,50 @@
 
 
 
-  
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
 
-  
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
 
 
 
   
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
   
 
 
-  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
 
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
 
 
 
@@ -510,33 +567,35 @@
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
 
 
 
   
+
+
+  
+
+
+
+
+	
+
+
+
+
 
   
     
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"junyi233"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementById('footer')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
-    
-    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/js/src/hook-duoshuo.js"></script>
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "85bede229699410085d50e5028a80cac",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
   
 
 
@@ -544,7 +603,18 @@
 
 
 
+
+
+
+
   
+
+
+
+
+
+  
+
   
 
   

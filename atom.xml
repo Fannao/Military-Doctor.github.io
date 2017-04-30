@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>MilitaryDoctor&#39;s Lab</title>
-  <subtitle>Keep going</subtitle>
+  <title>Junyi 的实验室</title>
+  <subtitle>有趣的灵魂终将相遇</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
-  <updated>2016-08-01T16:34:03.205Z</updated>
-  <id>http://yoursite.com/</id>
+  <link href="http://www.junyi.pw/"/>
+  <updated>2017-04-30T08:49:20.649Z</updated>
+  <id>http://www.junyi.pw/</id>
   
   <author>
     <name>Junyi</name>
@@ -16,44 +16,120 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>VeraCrype - 开源跨平台的文件加密工具</title>
-    <link href="http://yoursite.com/2016/08/02/VeraCrype/"/>
-    <id>http://yoursite.com/2016/08/02/VeraCrype/</id>
-    <published>2016-08-01T16:09:57.000Z</published>
-    <updated>2016-08-01T16:34:03.205Z</updated>
+    <title>我过去的经历</title>
+    <link href="http://www.junyi.pw/2017/04/30/mypast/"/>
+    <id>http://www.junyi.pw/2017/04/30/mypast/</id>
+    <published>2017-04-30T08:45:15.000Z</published>
+    <updated>2017-04-30T08:49:20.649Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="http://www.junyi.pw/images/veracrypt1.jpg" alt="VeraCrypt 自带简体中文，点击菜单 Settings-&gt;Language 选择简体中文即可"><br>VeraCrypt 是一款免费<strong>开源跨平台</strong>的实时磁盘文件加密工具，支持U盘加密/硬盘分区加密<br><a id="more"></a></p>
-<hr>
-<h1 id="VeraCrypt-中文版-更加出色的免费文件加密软件利器"><a href="#VeraCrypt-中文版-更加出色的免费文件加密软件利器" class="headerlink" title="VeraCrypt 中文版 - 更加出色的免费文件加密软件利器　"></a>VeraCrypt 中文版 - 更加出色的免费文件加密软件利器　</h1><p>　　VeraCrypt 是一款免费开源跨平台的实时磁盘文件加密工具，它是基于知名的开源加密工具 TrueCrypt 项目衍生而来。由于之前 TrueCrypt 已在官网上宣布其自身不安全并已停止开发了，因此现在比较活跃、而且同样是开源跨平台的 VeraCrypt 顺理成章成为大家公认的<strong>最佳文件加密工具</strong>新选择之一。 </p>
-<p>　　VeraCrypt 加密软件支持 Windows、Mac 和 Linux 系统，并通过 AES、Serpent、Twofish 等高强度加密算法进行实时的加密和解密。VeraCrypt 可以帮你创建一个虚拟的加密磁盘分区来让你保存重要的文件 (文件型加密卷)，这个虚拟磁盘会以一个文件的形式保存在你的电脑上，使用时只需通过 VeraCrypt 挂载成一个盘符即可进行使用。 </p>
-<p>VeraCrypt 也支持直接对物理分区甚至<strong>整个物理硬盘</strong>进行加密 (加密系统分区/加密整个硬盘)，而且也能「支持对移动硬盘、U盘加密」。 </p>
-<hr>
-<h1 id="隐藏加密卷功能"><a href="#隐藏加密卷功能" class="headerlink" title="隐藏加密卷功能"></a>隐藏加密卷功能</h1><p>　　VeraCrypt 还有一个很有特色且非常实用的功能——「似是而非的否认」(英文为 Plausible deniability，这翻译实在太拗口了)，这到底是个啥？<br>　　话说，如今的加密技术已经相当的牛B了，像 AES 算法就连美国军方也没办法破解。但如果你纵观历史，或者在各种电影里你会发现，在数据安全面前，其实最薄弱的环节往往不是加密技术，而是「人」本身！例如攻击者可以直接威胁你家人、或对你严刑逼供来迫使你交出密码，这时候，VeraCrypt 的「似是而非的否认」功能就能救你一命了！ </p>
-<p><img src="http://www.junyi.pw/images/veracrypt2.jpg" alt="VeraCrypt"> </p>
-<p>　　简单来说，这个功能可以让你为加密卷设置「两个密码」，一个密码可以解开普通的加密卷，另一个密码则是能解开一个隐藏在内层的「隐藏卷」。我们可以把并不重要的文件 (或者假的诱饵) 放在外层普通加密卷里，而真正重要的文件全部放在「隐藏卷」里，当被迫交出密码时，你只需将外层普通加密卷的密码告诉对方，这样他们只能解开外层普通加密卷的文件，实际上内层「隐藏卷」的重要资料还是安全的，对方也并不知道还有「隐藏卷」的存在，利用“弃车保帅”的妙计来蒙混过关。这就是 VeraCrypt 的“似是而非的否认”的功能，其实我认为把它称为「<strong>隐藏卷功能</strong>」更加易于理解。据说这功能对于防止老婆突击检查有奇效！ </p>
-<hr>
-<h1 id="官方网站"><a href="#官方网站" class="headerlink" title="官方网站"></a><a href="https://veracrypt.codeplex.com/" target="_blank" rel="external">官方网站</a></h1>]]></content>
+    <content type="html"><![CDATA[<script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">喔，这篇文章可不能随便看。</h3><div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="enter the password" id="pass"/> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">解密</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> U2FsdGVkX19SG2ziSxpZwsYgiFJhBLtHgHbRph2Fb7zV7B0G1eza/1J1NE74nwp7lENgxL8LKGLw+twHwJj3jR/OAzrgnKKSc4bHQ7ZN3a+mB637P/MbShXUvp2fKY1uA8e5MckCfUdz5sju7o3/tLh18Zc5AZC3kMavRcGBUkH0gUSZbKW/PiQwRdVtcW1ZK6PPByeEEn8l54a3xNx1C0sDK8E0f/remDtKH3KdAo+PBLqXCoCHK5RIJN/QcigGBI2WoRTOHpYOk1JAxbXa/DuEq5+SD6SqtninabciWU2Jkb+uuC5SuLNNn1NOT6rkybCSKzYpHP0tMhzZz9BYYGVzmMiqg8teHjhc/DTPMUS5OI7YXuQUTAptxAi/sOPcbqGt8wF5UDT3qq6zkLBeBUXJiJUJkYmFyTOgxQ9U9RHydAHYcHLgLoaVF8jTuFXXam5UB19qCRmUs401mTwzcdpcIaLhFFLIaoiy8ZMDIK/zilcyhDWa0vH0NsHZTu+P0VTN5uaYQ6Yq9bkW1Ryrtw== </div>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://www.junyi.pw/images/veracrypt1.jpg&quot; alt=&quot;VeraCrypt 自带简体中文，点击菜单 Settings-&amp;gt;Language 选择简体中文即可&quot;&gt;&lt;br&gt;VeraCrypt 是一款免费&lt;strong&gt;开源跨平台&lt;/strong&gt;的实时磁盘文件加密工具，支持U盘加密/硬盘分区加密&lt;br&gt;
+      这是一些值得我写下来的事。
     
     </summary>
     
+      <category term="none" scheme="http://www.junyi.pw/categories/none/"/>
     
-      <category term="软件分享" scheme="http://yoursite.com/tags/%E8%BD%AF%E4%BB%B6%E5%88%86%E4%BA%AB/"/>
+    
+      <category term="none" scheme="http://www.junyi.pw/tags/none/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>瞎写的遗传算法 [GA]</title>
+    <link href="http://www.junyi.pw/2017/04/30/GeneticAlgorithm/"/>
+    <id>http://www.junyi.pw/2017/04/30/GeneticAlgorithm/</id>
+    <published>2017-04-30T08:23:50.000Z</published>
+    <updated>2017-04-30T08:35:48.417Z</updated>
+    
+    <content type="html"><![CDATA[<p>心血来潮，自己瞎搞出来了一个遗传算法。</p>
+<h2 id="背景介绍："><a href="#背景介绍：" class="headerlink" title="背景介绍："></a>背景介绍：</h2><p> 　　一个种群有100个个体，每个个体只有一条染色体，每条染色体上只有一条DNA链（或许叫RNA更合适），每条链有344个基因 没有碱基互补配对</p>
+<p> 突变率 0.02 ，每次突变将翻转 8 个基因 （ 像这样 00100<code>01001101</code> -&gt; 00100<code>10110010</code>）</p>
+<p> （因为 8 个基因决定一个表现型（字母））</p>
+<p> 每次从群体中按轮盘赌随机杀死一个个体，</p>
+<a id="more"></a>
+<p> 只让群体中最优秀的基因有产生后代的机会，每次只产生一个后代。除了轮盘赌杀死的个体，没有自然死亡</p>
+<p> 没有种间斗争 没有自然灾害</p>
+<p> 参数调的好的话，迭代次数大概 3000 次左右就出来了最终结果：</p>
+<p> The quick browm fox jumps over the lazy dog</p>
+<h2 id="Chromosome-h"><a href="#Chromosome-h" class="headerlink" title="Chromosome.h"></a>Chromosome.h</h2> <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">pragma</span> once</span></div><div class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> Chromosome_H_</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> Chromosome_H_</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> GENE_LENGTH 344</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> random(x) (rand()%x)</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Chromosome</span> &#123;</span></div><div class="line"><span class="keyword">public</span>:</div><div class="line">	<span class="keyword">bool</span> gene[GENE_LENGTH];</div><div class="line">	<span class="keyword">size_t</span> gene_length;</div><div class="line">	~Chromosome()</div><div class="line">	&#123;&#125;</div><div class="line">	Chromosome()</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i&lt;<span class="number">344</span>; i++)</div><div class="line">		&#123;</div><div class="line">			gene[i] = random(<span class="number">2</span>);</div><div class="line">		&#125;</div><div class="line">		gene_length = GENE_LENGTH;</div><div class="line">		fitness = <span class="number">999</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">int</span> <span class="title">getGeneLength</span><span class="params">()</span></span></div><div class="line">	&#123;</div><div class="line">		<span class="keyword">return</span> GENE_LENGTH;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">mutation</span><span class="params">(Chromosome &amp;chrom, <span class="keyword">int</span> mutation_max_step)</span></span></div><div class="line">	&#123;</div><div class="line">		<span class="keyword">int</span> mut_pos = <span class="number">0</span>;</div><div class="line">		<span class="keyword">int</span> mut_num = <span class="number">0</span>;</div><div class="line">		mut_pos = random(chrom.getGeneLength());</div><div class="line">		mut_num = random(mutation_max_step);</div><div class="line">		<span class="keyword">if</span> ((<span class="keyword">unsigned</span> <span class="keyword">int</span>)(mut_pos + mut_num) &gt; chrom.gene_length)</div><div class="line">		&#123;</div><div class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = mut_pos + mut_num; i&gt;mut_pos; i--)</div><div class="line">			&#123;</div><div class="line">				chrom.gene[i] = !chrom.gene[i];</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span></div><div class="line">		&#123;</div><div class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = mut_pos; i&lt;mut_pos + mut_num; i++)</div><div class="line">			&#123;</div><div class="line">				chrom.gene[i] = !chrom.gene[i];</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">crossover</span><span class="params">(Chromosome &amp;chrom1, Chromosome &amp;chrom2)</span></span></div><div class="line">	&#123;</div><div class="line">		<span class="keyword">int</span> rand_pos = <span class="number">0</span>;</div><div class="line">		<span class="keyword">int</span> rand_num = <span class="number">0</span>;</div><div class="line"></div><div class="line">		rand_pos = random(chrom1.gene_length); <span class="comment">// 发生交叉互换的位置</span></div><div class="line">		rand_num = random(<span class="number">32</span>); <span class="comment">// 交叉互换的基因片段长度</span></div><div class="line"></div><div class="line">		<span class="keyword">bool</span> type = <span class="number">0</span>; <span class="comment">// 0 - 向后交叉; 1 - 向前交叉</span></div><div class="line">		<span class="keyword">if</span> ((<span class="keyword">unsigned</span> <span class="keyword">int</span>)(rand_pos + rand_num) &gt; chrom1.gene_length)</div><div class="line">			type = <span class="number">1</span>;</div><div class="line"></div><div class="line">		<span class="keyword">bool</span> tempA = <span class="number">0</span>, tempB = <span class="number">0</span>, tempC = <span class="number">0</span>;</div><div class="line">		<span class="keyword">if</span> (type == <span class="number">0</span>)</div><div class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = rand_pos; i&lt;rand_pos + rand_num; i++)</div><div class="line">			&#123;</div><div class="line">				tempA = chrom1.gene[i];</div><div class="line">				tempB = chrom2.gene[i];</div><div class="line">				tempC = tempA;</div><div class="line">				tempA = tempB;</div><div class="line">				tempB = tempC;</div><div class="line">			&#125;</div><div class="line">		<span class="keyword">else</span></div><div class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = rand_pos + rand_num; i&gt;rand_pos; i--)</div><div class="line">			&#123;</div><div class="line">				tempA = chrom1.gene[i];</div><div class="line">				tempB = chrom2.gene[i];</div><div class="line">				tempC = tempA;</div><div class="line">				tempA = tempB;</div><div class="line">				tempB = tempC;</div><div class="line">			&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">unsigned</span> <span class="keyword">char</span>&gt; decode()</div><div class="line">	&#123;</div><div class="line">		<span class="comment">// 8 bit</span></div><div class="line">		<span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">unsigned</span> <span class="keyword">char</span>&gt; result;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">unsigned</span> <span class="keyword">int</span> i = <span class="number">0</span>; i&lt;(GENE_LENGTH / <span class="number">8</span>); i++)</div><div class="line">		&#123;</div><div class="line">			<span class="keyword">bool</span> a[<span class="number">8</span>] = &#123; <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span> &#125;;</div><div class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j&lt;<span class="number">8</span>; j++)</div><div class="line">				a[j] = gene[i * <span class="number">8</span> + j];</div><div class="line"></div><div class="line">			result.push_back(bin2dec(a, <span class="number">8</span>));</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> result;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">virtual</span> ~Chromosome();</div><div class="line">	<span class="keyword">double</span> fitness;</div><div class="line"><span class="keyword">private</span>:</div><div class="line">	<span class="function"><span class="keyword">int</span> <span class="title">bin2dec</span><span class="params">(<span class="keyword">bool</span> a[], <span class="keyword">int</span> a_length)</span></span></div><div class="line">	&#123;</div><div class="line">		<span class="keyword">int</span> result = <span class="number">0</span>;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = a_length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)</div><div class="line">		&#123;</div><div class="line">			<span class="keyword">if</span> (a[i])</div><div class="line">				result += <span class="built_in">pow</span>(<span class="number">2</span>, i - <span class="number">1</span>);</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> result;</div><div class="line">	&#125;</div><div class="line">	<span class="comment">// The quick brown fox jumps over the lazy dog</span></div><div class="line"></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/* Chromosome_H_ */</span></span></div></pre></td></tr></table></figure>
+<h2 id="GeAlg-h"><a href="#GeAlg-h" class="headerlink" title="GeAlg.h"></a>GeAlg.h</h2> <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">pragma</span> once</span></div><div class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> GEALG_H_</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> GEALG_H_</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"Chromosome.h"</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">GeAlg</span> &#123;</span></div><div class="line"><span class="keyword">public</span>:</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">select</span><span class="params">()</span></span>; <span class="comment">// 自然选择</span></div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">fitness</span><span class="params">()</span></span>; <span class="comment">// 生物竞争</span></div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">next_generation</span><span class="params">()</span></span>; <span class="comment">// 产生下一代</span></div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">calc</span><span class="params">()</span></span>;</div><div class="line">	<span class="function"><span class="keyword">int</span> <span class="title">size</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123; <span class="keyword">return</span> pop.size(); &#125;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span></div><div class="line">	&#123;</div><div class="line">		<span class="keyword">unsigned</span> <span class="keyword">char</span> a[<span class="number">100</span>] = &#123; <span class="number">0</span> &#125;;</div><div class="line">		<span class="built_in">vector</span>&lt;<span class="keyword">unsigned</span> <span class="keyword">char</span>&gt; decode = best_one.decode();</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">size_t</span> i = <span class="number">0</span>; i&lt;decode.size(); i++)</div><div class="line">		&#123;</div><div class="line">			a[i] = decode[i];</div><div class="line">		&#125;</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"进化代数:"</span> &lt;&lt; generation &lt;&lt; <span class="string">" 适应度:"</span> &lt;&lt; best_fitness &lt;&lt; <span class="string">" 表现型："</span> &lt;&lt; a &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	&#125;</div><div class="line">	GeAlg(<span class="keyword">int</span> size, <span class="keyword">double</span> mutation, <span class="keyword">double</span> crossover, <span class="keyword">int</span> mutation_max_step);</div><div class="line">	<span class="keyword">virtual</span> ~GeAlg();</div><div class="line"><span class="keyword">private</span>:</div><div class="line">	<span class="function"><span class="keyword">double</span> <span class="title">calc_fitness</span><span class="params">(<span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">unsigned</span> <span class="keyword">char</span>&gt; decoded)</span></span>;</div><div class="line">	<span class="keyword">double</span> total_fitness;<span class="comment">// 种群总适应度（所有个体适应度的和）</span></div><div class="line">	<span class="keyword">double</span> best_fitness;<span class="comment">// 最适应个体的适应度</span></div><div class="line">	Chromosome best_one;<span class="comment">// 最好的个体的基因</span></div><div class="line">	<span class="keyword">double</span> average_fitness;<span class="comment">// 平均适应度</span></div><div class="line">	<span class="keyword">double</span> worst_fitness;<span class="comment">// 最坏的个体</span></div><div class="line">	<span class="keyword">double</span> mutation;<span class="comment">// 突变率</span></div><div class="line">	<span class="keyword">int</span> mutation_max_step;<span class="comment">// 最多突变多少基因</span></div><div class="line">	<span class="keyword">double</span> crossover;<span class="comment">// 交叉互换率</span></div><div class="line">	<span class="keyword">int</span> generation;<span class="comment">// 进化代数</span></div><div class="line">	<span class="built_in">std</span>::<span class="built_in">vector</span>&lt;Chromosome&gt; pop;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/* GEALG_H_ */</span></span></div></pre></td></tr></table></figure>
+<h2 id="GeAlg-cpp"><a href="#GeAlg-cpp" class="headerlink" title="GeAlg.cpp"></a>GeAlg.cpp</h2> <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdafx.h"</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;tchar.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"GeAlg.h"</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></div><div class="line"></div><div class="line"><span class="keyword">void</span> GeAlg::next_generation()</div><div class="line">&#123;</div><div class="line">	generation++;</div><div class="line"></div><div class="line">	<span class="keyword">int</span> rand_pos1 = random(pop.size());</div><div class="line">	<span class="keyword">int</span> rand_pos2 = random(pop.size());</div><div class="line">	<span class="keyword">if</span> (rand_pos1 == rand_pos2)</div><div class="line">		rand_pos2++;</div><div class="line"></div><div class="line">	Chromosome father = best_one;</div><div class="line">	Chromosome mother = best_one;</div><div class="line">	<span class="comment">/*Chromosome child1, child2;</span></div><div class="line">	for(int i=0; i&lt;father.gene_length/2; i++)</div><div class="line">	&#123;</div><div class="line">	child1.gene[i] = father.gene[i];</div><div class="line">	child2.gene[i] = mother.gene[i];</div><div class="line">	&#125;</div><div class="line">	for(int i=mother.gene_length; i&lt;mother.gene_length; i++)</div><div class="line">	&#123;</div><div class="line">	child1.gene[i] = mother.gene[i];</div><div class="line">	child2.gene[i] = father.gene[i];</div><div class="line">	&#125;*/</div><div class="line">	<span class="keyword">double</span> mut_rand = (<span class="keyword">double</span>)random(<span class="number">100</span>) / <span class="number">100.0</span>;</div><div class="line">	<span class="keyword">if</span> (mut_rand &gt; mutation)</div><div class="line">	&#123;</div><div class="line">		father.mutation(father, mutation_max_step);</div><div class="line">	&#125;</div><div class="line">	mut_rand = (<span class="keyword">double</span>)random(<span class="number">100</span>) / <span class="number">100.0</span>;</div><div class="line">	<span class="keyword">if</span> (mut_rand &gt; mutation)</div><div class="line">	&#123;</div><div class="line">		mother.mutation(mother, mutation_max_step);</div><div class="line">	&#125;</div><div class="line"></div><div class="line"></div><div class="line">	pop.push_back(father);</div><div class="line">	<span class="comment">//pop.push_back(mother);</span></div><div class="line">	<span class="comment">//pop.push_back(child1);</span></div><div class="line">	<span class="comment">//pop.push_back(child2);</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">void</span> GeAlg::select()</div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> slice = random((<span class="keyword">int</span>)total_fitness);</div><div class="line">	<span class="keyword">double</span> fitness = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="built_in">vector</span>&lt;Chromosome&gt;::iterator it = pop.begin(); it != pop.end(); it++)</div><div class="line">	&#123;</div><div class="line">		fitness += it-&gt;fitness;</div><div class="line">		<span class="keyword">if</span> (fitness &gt; slice)</div><div class="line">		&#123;</div><div class="line">			pop.erase(it);</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">void</span> GeAlg::calc()</div><div class="line">&#123;</div><div class="line">	best_fitness = <span class="number">99999</span>;</div><div class="line">	total_fitness = <span class="number">0</span>;</div><div class="line">	worst_fitness = <span class="number">0</span>;</div><div class="line">	best_one = Chromosome();</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">size_t</span> i = <span class="number">0</span>; i&lt;pop.size(); i++)</div><div class="line">	&#123;</div><div class="line">		pop[i].fitness = calc_fitness(pop[i].decode());</div><div class="line">		total_fitness += pop[i].fitness;</div><div class="line">		<span class="keyword">if</span> (pop[i].fitness &lt; best_fitness)</div><div class="line">		&#123;</div><div class="line">			best_fitness = pop[i].fitness;</div><div class="line">			best_one = pop[i];</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span> (pop[i].fitness &gt; worst_fitness)</div><div class="line">		&#123;</div><div class="line">			worst_fitness = pop[i].fitness;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	average_fitness = total_fitness / pop.size();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">double</span> GeAlg::calc_fitness(<span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">unsigned</span> <span class="keyword">char</span>&gt; decoded)</div><div class="line">&#123;</div><div class="line">	<span class="comment">//unsigned char text[] = "Hello world! I am fine thank you and you???";</span></div><div class="line">	<span class="keyword">unsigned</span> <span class="keyword">char</span> text[] = <span class="string">"The quick brown fox jumps over the lazy dog"</span>;</div><div class="line">	<span class="keyword">double</span> fitness = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">size_t</span> i = <span class="number">0</span>; i&lt;decoded.size(); i++)</div><div class="line">	&#123;</div><div class="line">		fitness += <span class="built_in">std</span>::<span class="built_in">abs</span>(decoded[i] - text[i]);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> fitness;</div><div class="line">&#125;</div><div class="line"></div><div class="line">GeAlg::GeAlg(<span class="keyword">int</span> size, <span class="keyword">double</span> mutation, <span class="keyword">double</span> crossover, <span class="keyword">int</span> mutation_max_step) &#123;</div><div class="line">	<span class="comment">// TODO Auto-generated constructor stub</span></div><div class="line">	<span class="keyword">this</span>-&gt;total_fitness = <span class="number">0</span>;</div><div class="line">	<span class="keyword">this</span>-&gt;best_fitness = <span class="number">0</span>;</div><div class="line">	<span class="keyword">this</span>-&gt;average_fitness = <span class="number">0</span>;</div><div class="line">	<span class="keyword">this</span>-&gt;worst_fitness = <span class="number">999999</span>;</div><div class="line">	<span class="keyword">this</span>-&gt;mutation = mutation;</div><div class="line">	<span class="keyword">this</span>-&gt;mutation_max_step = mutation_max_step;</div><div class="line">	<span class="keyword">this</span>-&gt;crossover = crossover;</div><div class="line">	<span class="keyword">this</span>-&gt;generation = <span class="number">0</span>;</div><div class="line">	pop.clear();</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i&lt;size; i++)</div><div class="line">	&#123;</div><div class="line">		pop.push_back(Chromosome());</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">GeAlg::~GeAlg() &#123;</div><div class="line">	<span class="comment">// TODO Auto-generated destructor stub</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="main-cpp"><a href="#main-cpp" class="headerlink" title="main.cpp"></a>main.cpp</h2> <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdafx.h"</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ctime&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"GeAlg.h"</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"Chromosome.h"</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> random(x) (rand()%x)</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">start</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">	GeAlg *ga = <span class="keyword">new</span> GeAlg(<span class="number">100</span>, <span class="number">0.2</span>, <span class="number">0.0001</span>, <span class="number">8</span>);</div><div class="line">	ga-&gt;calc();</div><div class="line">	</div><div class="line">	<span class="keyword">while</span> (<span class="number">1</span>)</div><div class="line">	&#123;</div><div class="line">		</div><div class="line">		<span class="comment">//while (ga-&gt;size() - 100 &gt; 0)</span></div><div class="line">		<span class="comment">//&#123;</span></div><div class="line">			<span class="comment">//ga-&gt;select();</span></div><div class="line">			<span class="comment">//ga-&gt;calc();</span></div><div class="line">		<span class="comment">//&#125;</span></div><div class="line">		</div><div class="line">		ga-&gt;select();</div><div class="line">		ga-&gt;calc();</div><div class="line">		ga-&gt;print();</div><div class="line">		ga-&gt;next_generation();</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">	srand(time(<span class="number">0</span>));</div><div class="line">	start();</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;心血来潮，自己瞎搞出来了一个遗传算法。&lt;/p&gt;
+&lt;h2 id=&quot;背景介绍：&quot;&gt;&lt;a href=&quot;#背景介绍：&quot; class=&quot;headerlink&quot; title=&quot;背景介绍：&quot;&gt;&lt;/a&gt;背景介绍：&lt;/h2&gt;&lt;p&gt; 　　一个种群有100个个体，每个个体只有一条染色体，每条染色体上只有一条DNA链（或许叫RNA更合适），每条链有344个基因 没有碱基互补配对&lt;/p&gt;
+&lt;p&gt; 突变率 0.02 ，每次突变将翻转 8 个基因 （ 像这样 00100&lt;code&gt;01001101&lt;/code&gt; -&amp;gt; 00100&lt;code&gt;10110010&lt;/code&gt;）&lt;/p&gt;
+&lt;p&gt; （因为 8 个基因决定一个表现型（字母））&lt;/p&gt;
+&lt;p&gt; 每次从群体中按轮盘赌随机杀死一个个体，&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Coding" scheme="http://www.junyi.pw/categories/Coding/"/>
+    
+    
+      <category term="C++" scheme="http://www.junyi.pw/tags/C/"/>
+    
+      <category term="Algorithm" scheme="http://www.junyi.pw/tags/Algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何获取Unix时间戳 [C++]</title>
+    <link href="http://www.junyi.pw/2017/04/30/unixtimestamp/"/>
+    <id>http://www.junyi.pw/2017/04/30/unixtimestamp/</id>
+    <published>2017-04-30T08:18:31.000Z</published>
+    <updated>2017-04-30T08:36:18.900Z</updated>
+    
+    <content type="html"><![CDATA[<p>时间戳可以说是网络编程中<strong>必须</strong>使用的一个东西</p>
+<h2 id="什么是Unix时间戳？"><a href="#什么是Unix时间戳？" class="headerlink" title="什么是Unix时间戳？"></a><strong>什么是Unix时间戳</strong>？</h2><div class="note info"><p>Unix时间戳(Unix timestamp)，或称Unix时间(Unix time)、POSIX时间(POSIX time)，是一种时间表示方式，定义为从<strong>格林威治时间1970年01月01日00时00分00秒</strong>起至现在的总秒数。Unix时间戳不仅被使用在Unix系统、类Unix系统中，也在许多其他操作系统中被广泛采用</p>
+</div>
+<h2 id="2038年1月19日会发生什么？"><a href="#2038年1月19日会发生什么？" class="headerlink" title="2038年1月19日会发生什么？"></a><strong>2038年1月19日会发生什么</strong>？</h2><a id="more"></a>
+<div class="note info"><p>在2038年1月19日，由于32位整形溢出，Unix时间戳会停止工作。在这个大灾难前，数百万计的应用程序采取新的约定时间的方式，要么升级到64位版本。</p>
+</div>
+<h2 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a><strong>代码示例</strong></h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//Code::Blocks 编译通过；需开启 "-std=c++11" 编译开关</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ctime&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="built_in">std</span>::<span class="keyword">time_t</span> result = <span class="built_in">std</span>::time(<span class="literal">nullptr</span>);</div><div class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="built_in">std</span>::asctime(<span class="built_in">std</span>::localtime(&amp;result))</div><div class="line">              &lt;&lt; result &lt;&lt; <span class="string">" seconds since the Epoch\n"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="运行结果："><a href="#运行结果：" class="headerlink" title="运行结果："></a>运行结果：</h3><blockquote>
+<p>Sun Nov 22 11:48:58 2015<br>1448164138 seconds since the Epoch</p>
+</blockquote>
+<p>之所以开启”-std=c++11”编译开关的原因是因为nullptr是<strong>C++11</strong>语言标准用来表示空指针的常量值。</p>
+<p>不使用C++11标准的话，你还可以这样写：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//Code::Blocks编译通过</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;ctime&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="built_in">std</span>::<span class="keyword">time_t</span> t = <span class="built_in">std</span>::time(<span class="number">0</span>);  <span class="comment">// t is an integer type</span></div><div class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; t &lt;&lt; <span class="string">" seconds since 01-Jan-1970\n"</span>;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>代码引用自 <a href="http://stackoverflow.com/questions/6012663/get-unix-timestamp-with-c" target="_blank" rel="external">Get Unix timestamp with C++</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;时间戳可以说是网络编程中&lt;strong&gt;必须&lt;/strong&gt;使用的一个东西&lt;/p&gt;
+&lt;h2 id=&quot;什么是Unix时间戳？&quot;&gt;&lt;a href=&quot;#什么是Unix时间戳？&quot; class=&quot;headerlink&quot; title=&quot;什么是Unix时间戳？&quot;&gt;&lt;/a&gt;&lt;strong&gt;什么是Unix时间戳&lt;/strong&gt;？&lt;/h2&gt;&lt;div class=&quot;note info&quot;&gt;&lt;p&gt;Unix时间戳(Unix timestamp)，或称Unix时间(Unix time)、POSIX时间(POSIX time)，是一种时间表示方式，定义为从&lt;strong&gt;格林威治时间1970年01月01日00时00分00秒&lt;/strong&gt;起至现在的总秒数。Unix时间戳不仅被使用在Unix系统、类Unix系统中，也在许多其他操作系统中被广泛采用&lt;/p&gt;
+&lt;/div&gt;
+&lt;h2 id=&quot;2038年1月19日会发生什么？&quot;&gt;&lt;a href=&quot;#2038年1月19日会发生什么？&quot; class=&quot;headerlink&quot; title=&quot;2038年1月19日会发生什么？&quot;&gt;&lt;/a&gt;&lt;strong&gt;2038年1月19日会发生什么&lt;/strong&gt;？&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="Programming" scheme="http://www.junyi.pw/categories/Programming/"/>
+    
+    
+      <category term="C++" scheme="http://www.junyi.pw/tags/C/"/>
+    
+      <category term="教程" scheme="http://www.junyi.pw/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
     <title>Visual Studio 2015 使用 libcurl</title>
-    <link href="http://yoursite.com/2016/07/30/Visual-Studio-2015-libcurl/"/>
-    <id>http://yoursite.com/2016/07/30/Visual-Studio-2015-libcurl/</id>
-    <published>2016-07-30T11:01:37.000Z</published>
-    <updated>2016-07-30T11:40:23.637Z</updated>
+    <link href="http://www.junyi.pw/2017/04/30/libcurl-vs2015/"/>
+    <id>http://www.junyi.pw/2017/04/30/libcurl-vs2015/</id>
+    <published>2017-04-30T08:14:22.000Z</published>
+    <updated>2017-04-30T08:16:45.916Z</updated>
     
-    <content type="html"><![CDATA[<p>libcurl 可是个好东西啊，可是该怎么在 VS2015 中使用呢？<br><a id="more"></a></p>
-<h2 id="Step-1-构建libcurl静态库"><a href="#Step-1-构建libcurl静态库" class="headerlink" title="Step 1: 构建libcurl静态库"></a><strong>Step 1: 构建libcurl静态库</strong></h2><pre><code>libcurl 目前最新版：7.46.0
+    <content type="html"><![CDATA[<p>libcurl是使用C++写的一个线程安全的、跨平台的网络库，非常好用。<br>那么我们如何在 Visual Studio 2015 中使用它呢？</p>
+<a id="more"></a>
+<h1 id="Step-1-构建libcurl静态库"><a href="#Step-1-构建libcurl静态库" class="headerlink" title="Step 1: 构建libcurl静态库"></a><strong>Step 1: 构建libcurl静态库</strong></h1><pre><code>libcurl目前最新版：7.46.0
 请按照自己的需要适当更改文中出现的路径
 </code></pre><ol>
 <li>下载最新版<strong><a href="http://curl.haxx.se/latest.cgi?curl=tar.gz" target="_blank" rel="external">libcurl</a></strong></li>
@@ -65,103 +141,194 @@
 <li>构建完成后的静态库应该在<code>C:\libcurl\builds\libcurl-vc14-x86-release-static-ipv6-sspi-winssl</code>里，如图：<br><img src="http://img.blog.csdn.net/20160116130527619" alt="这里写图片描述"></li>
 </ol>
 <hr>
-<h2 id="Step-2-针对libcurl进行链接"><a href="#Step-2-针对libcurl进行链接" class="headerlink" title="Step 2: 针对libcurl进行链接"></a><strong>Step 2: 针对libcurl进行链接</strong></h2><ol>
+<h1 id="Step-2-针对libcurl进行链接"><a href="#Step-2-针对libcurl进行链接" class="headerlink" title="Step 2: 针对libcurl进行链接"></a><strong>Step 2: 针对libcurl进行链接</strong></h1><ol>
 <li>打开项目属性：菜单 -&gt; 项目(P) -&gt; 属性(P)</li>
-<li>配置属性 -&gt; C/C++ -&gt; 常规 -&gt; 附加包含目录<br>添加：<code>C:\libcurl\builds\libcurl-vc14-x86-release-static-ipv6-sspi-winssl\include</code><br>如图：<br><img src="http://img.blog.csdn.net/20160116131143142" alt="这里写图片描述"></li>
-<li>配置属性 -&gt; C/C++ -&gt; 预处理器 -&gt; 预处理器定义<br>加入 <code>CURL_STATICLIB</code><br>如图：<br><img src="http://img.blog.csdn.net/20160116131409606" alt="这里写图片描述"></li>
-<li>配置属性 -&gt; 链接器 -&gt; 常规 -&gt; 附加库目录<br>添加：<code>C:\libcurl\builds\libcurl-vc14-x86-release-static-ipv6-sspi-winssl\lib</code><br>如图：<br><img src="http://img.blog.csdn.net/20160116131625936" alt="这里写图片描述"></li>
-<li>配置属性 -&gt; 链接器 -&gt; 输入 -&gt; 附加依赖项<br>添加：<code>libcurl_a.lib</code><br>如图：<br><img src="http://img.blog.csdn.net/20160116131813576" alt="这里写图片描述"></li>
+<li>配置属性 -&gt; C/C++ -&gt; 常规 -&gt; 附加包含目录<br> 添加：<code>C:\libcurl\builds\libcurl-vc14-x86-release-static-ipv6-sspi-winssl\include</code><br> 如图：<br> <img src="http://img.blog.csdn.net/20160116131143142" alt="这里写图片描述"></li>
+<li>配置属性 -&gt; C/C++ -&gt; 预处理器 -&gt; 预处理器定义<br> 加入 <code>CURL_STATICLIB</code><br> 如图：<br> <img src="http://img.blog.csdn.net/20160116131409606" alt="这里写图片描述"></li>
+<li>配置属性 -&gt; 链接器 -&gt; 常规 -&gt; 附加库目录<br> 添加：<code>C:\libcurl\builds\libcurl-vc14-x86-release-static-ipv6-sspi-winssl\lib</code><br> 如图：<br> <img src="http://img.blog.csdn.net/20160116131625936" alt="这里写图片描述"></li>
+<li>配置属性 -&gt; 链接器 -&gt; 输入 -&gt; 附加依赖项<br> 添加：<code>libcurl_a.lib</code><br> 如图：<br> <img src="http://img.blog.csdn.net/20160116131813576" alt="这里写图片描述"></li>
 </ol>
 <hr>
-<h2 id="Step-3-上代码！"><a href="#Step-3-上代码！" class="headerlink" title="Step 3: 上代码！"></a><strong>Step 3: 上代码！</strong></h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdafx.h"</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;curl/curl.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line">&#123;</div><div class="line">	CURL *curl;</div><div class="line">	CURLcode res;</div><div class="line"></div><div class="line">	curl = curl_easy_init();</div><div class="line">	<span class="keyword">if</span> (curl) &#123;</div><div class="line">		curl_easy_setopt(curl, CURLOPT_URL, <span class="string">"http://example.com"</span>);</div><div class="line">		<span class="comment">/* example.com is redirected, so we tell libcurl to follow redirection */</span></div><div class="line">		curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, <span class="number">1L</span>);</div><div class="line"></div><div class="line">		<span class="comment">/* Perform the request, res will get the return code */</span></div><div class="line">		res = curl_easy_perform(curl);</div><div class="line">		<span class="comment">/* Check for errors */</span></div><div class="line">		<span class="keyword">if</span> (res != CURLE_OK)</div><div class="line">			<span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"curl_easy_perform() failed: %s\n"</span>,</div><div class="line">				curl_easy_strerror(res));</div><div class="line"></div><div class="line">		<span class="comment">/* always cleanup */</span></div><div class="line">		curl_easy_cleanup(curl);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="Step-3-上代码！"><a href="#Step-3-上代码！" class="headerlink" title="Step 3: 上代码！"></a><strong>Step 3: 上代码！</strong></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">#include &quot;stdafx.h&quot;</div><div class="line">#include &lt;stdio.h&gt;</div><div class="line">#include &lt;curl/curl.h&gt;</div><div class="line"></div><div class="line">int main(void)</div><div class="line">&#123;</div><div class="line">	CURL *curl;</div><div class="line">	CURLcode res;</div><div class="line"></div><div class="line">	curl = curl_easy_init();</div><div class="line">	if (curl) &#123;</div><div class="line">		curl_easy_setopt(curl, CURLOPT_URL, &quot;http://example.com&quot;);</div><div class="line">		/* example.com is redirected, so we tell libcurl to follow redirection */</div><div class="line">		curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);</div><div class="line"></div><div class="line">		/* Perform the request, res will get the return code */</div><div class="line">		res = curl_easy_perform(curl);</div><div class="line">		/* Check for errors */</div><div class="line">		if (res != CURLE_OK)</div><div class="line">			fprintf(stderr, &quot;curl_easy_perform() failed: %s\n&quot;,</div><div class="line">				curl_easy_strerror(res));</div><div class="line"></div><div class="line">		/* always cleanup */</div><div class="line">		curl_easy_cleanup(curl);</div><div class="line">	&#125;</div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><img src="http://img.blog.csdn.net/20160116134311399" alt="这里写图片描述"><br>（如果图片看不清，请<code>右键 - &gt;新标签页中打开图片</code>）<br>运行结果：<br><img src="http://img.blog.csdn.net/20160116133535292" alt="这里写图片描述"></p>
 <hr>
-<h2 id="最后说两句"><a href="#最后说两句" class="headerlink" title="最后说两句"></a><strong>最后说两句</strong></h2><p>本文参考自<a href="http://stackoverflow.com/questions/20171165/getting-libcurl-to-work-with-visual-studio-2013" target="_blank" rel="external">Stack overflow</a></p>
+<h3 id="最后说两句"><a href="#最后说两句" class="headerlink" title="最后说两句"></a><strong>最后说两句</strong></h3><p>本文参考自<a href="http://stackoverflow.com/questions/20171165/getting-libcurl-to-work-with-visual-studio-2013" target="_blank" rel="external">Stack overflow</a></p>
 <p><code>..\libcurl\docs\examples</code>里面有好多例子可以参考。</p>
 <p>有啥问题可以在评论区留言（我估计这篇文章没人会看。。。。）</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;libcurl 可是个好东西啊，可是该怎么在 VS2015 中使用呢？&lt;br&gt;
+      &lt;p&gt;libcurl是使用C++写的一个线程安全的、跨平台的网络库，非常好用。&lt;br&gt;那么我们如何在 Visual Studio 2015 中使用它呢？&lt;/p&gt;
     
     </summary>
     
+      <category term="Programming" scheme="http://www.junyi.pw/categories/Programming/"/>
     
-      <category term="C++" scheme="http://yoursite.com/tags/C/"/>
     
-      <category term="编程" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A8%8B/"/>
+      <category term="C++" scheme="http://www.junyi.pw/tags/C/"/>
     
-      <category term="libcurl" scheme="http://yoursite.com/tags/libcurl/"/>
+      <category term="Visual Studio" scheme="http://www.junyi.pw/tags/Visual-Studio/"/>
+    
+      <category term="libcurl" scheme="http://www.junyi.pw/tags/libcurl/"/>
+    
+      <category term="Network" scheme="http://www.junyi.pw/tags/Network/"/>
     
   </entry>
   
   <entry>
-    <title>如何获取Unix时间戳[C++]</title>
-    <link href="http://yoursite.com/2016/07/30/UnixTime/"/>
-    <id>http://yoursite.com/2016/07/30/UnixTime/</id>
-    <published>2016-07-30T11:00:24.000Z</published>
-    <updated>2016-07-30T11:50:13.614Z</updated>
+    <title>VeraCrypt - 开源跨平台的文件加密工具</title>
+    <link href="http://www.junyi.pw/2017/04/30/veracrypt/"/>
+    <id>http://www.junyi.pw/2017/04/30/veracrypt/</id>
+    <published>2017-04-30T08:02:26.000Z</published>
+    <updated>2017-04-30T08:13:21.585Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="什么是Unix时间戳？"><a href="#什么是Unix时间戳？" class="headerlink" title="什么是Unix时间戳？"></a><strong>什么是Unix时间戳</strong>？</h3><blockquote>
-<p>Unix时间戳(Unix timestamp)，或称Unix时间(Unix time)、POSIX时间(POSIX time)，是一种时间表示方式，定义为从<strong>格林威治时间1970年01月01日00时00分00秒</strong>起至现在的总秒数。Unix时间戳不仅被使用在Unix系统、类Unix系统中，也在许多其他操作系统中被广泛采用</p>
+    <content type="html"><![CDATA[<p><img src="http://www.junyi.pw/assets/images/veracrypt1.jpg" alt="VeraCrypt"><br>VeraCrypt 是一款免费的<strong>开源跨平台</strong>的实时磁盘文件加密工具，支持U盘加密/硬盘分区加密<br><a id="more"></a></p>
+<hr>
+<h1 id="VeraCrypt-中文版-更加出色的免费文件加密软件利器"><a href="#VeraCrypt-中文版-更加出色的免费文件加密软件利器" class="headerlink" title="VeraCrypt 中文版 - 更加出色的免费文件加密软件利器"></a>VeraCrypt 中文版 - 更加出色的免费文件加密软件利器</h1><p>　　VeraCrypt 是一款免费开源跨平台的实时磁盘文件加密工具，它是基于知名的开源加密工具 TrueCrypt 项目衍生而来。由于之前 TrueCrypt 已在官网上宣布其自身不安全并已停止开发了，因此现在比较活跃、而且同样是开源跨平台的 VeraCrypt 顺理成章成为大家公认的<strong>最佳文件加密工具</strong>新选择之一。</p>
+<p>　　VeraCrypt 加密软件支持 Windows、Mac 和 Linux 系统，并通过 AES、Serpent、Twofish 等高强度加密算法进行实时的加密和解密。VeraCrypt 可以帮你创建一个虚拟的加密磁盘分区来让你保存重要的文件 (文件型加密卷)，这个虚拟磁盘会以一个文件的形式保存在你的电脑上，使用时只需通过 VeraCrypt 挂载成一个盘符即可进行使用。</p>
+<p>VeraCrypt 也支持直接对物理分区甚至<strong>整个物理硬盘</strong>进行加密 (加密系统分区/加密整个硬盘)，而且也能「支持对移动硬盘、U盘加密」。</p>
+<hr>
+<h1 id="隐藏加密卷功能"><a href="#隐藏加密卷功能" class="headerlink" title="隐藏加密卷功能"></a>隐藏加密卷功能</h1><p>　　VeraCrypt 还有一个很有特色且非常实用的功能——「似是而非的否认」(英文为 Plausible deniability，这翻译实在太拗口了)，这到底是个啥？<br>　　话说，如今的加密技术已经相当的牛B了，像 AES 算法就连美国军方也没办法破解。但如果你纵观历史，或者在各种电影里你会发现，在数据安全面前，其实最薄弱的环节往往不是加密技术，而是「人」本身！例如攻击者可以直接威胁你家人、或对你严刑逼供来迫使你交出密码，这时候，VeraCrypt 的「似是而非的否认」功能就能救你一命了！<br><img src="http://www.junyi.pw/assets/images/veracrypt2.jpg" alt="VeraCrypt"><br>　　简单来说，这个功能可以让你为加密卷设置「两个密码」，一个密码可以解开普通的加密卷，另一个密码则是能解开一个隐藏在内层的「隐藏卷」。我们可以把并不重要的文件 (或者假的诱饵) 放在外层普通加密卷里，而真正重要的文件全部放在「隐藏卷」里，当被迫交出密码时，你只需将外层普通加密卷的密码告诉对方，这样他们只能解开外层普通加密卷的文件，实际上内层「隐藏卷」的重要资料还是安全的，对方也并不知道还有「隐藏卷」的存在，利用“弃车保帅”的妙计来蒙混过关。这就是 VeraCrypt 的“似是而非的否认”的功能，其实我认为把它称为<strong>「隐藏卷功能」</strong>更加易于理解。据说这功能对于防止老婆突击检查有奇效！</p>
+<hr>
+<h1 id="官方网站"><a href="#官方网站" class="headerlink" title="官方网站"></a>官方网站</h1><p><a href="https://veracrypt.codeplex.com/" target="_blank" rel="external">VeraCtypt</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://www.junyi.pw/assets/images/veracrypt1.jpg&quot; alt=&quot;VeraCrypt&quot;&gt;&lt;br&gt;VeraCrypt 是一款免费的&lt;strong&gt;开源跨平台&lt;/strong&gt;的实时磁盘文件加密工具，支持U盘加密/硬盘分区加密&lt;br&gt;
+    
+    </summary>
+    
+      <category term="软件推荐" scheme="http://www.junyi.pw/categories/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/"/>
+    
+    
+      <category term="软件推荐" scheme="http://www.junyi.pw/tags/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Bilibili直播的弹幕数据包解析</title>
+    <link href="http://www.junyi.pw/2017/04/30/bilibilidanmuku/"/>
+    <id>http://www.junyi.pw/2017/04/30/bilibilidanmuku/</id>
+    <published>2017-04-30T07:57:39.000Z</published>
+    <updated>2017-04-30T08:00:53.647Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近心血来潮想连接到B站的弹幕池，于是反编译了弹幕姬和直播姬，找到了以下关键代码，遂记之。<br><a id="more"></a></p>
+<h2 id="数据获取"><a href="#数据获取" class="headerlink" title="数据获取"></a><strong>数据获取</strong></h2><p>如何跟B站的弹幕服务器保持通讯在这里就不赘述了。</p>
+<p>假设你恰好收到了服务器发来的一段socket数据，放到了 unsigned char 数组里：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;0, 0, 1, 9, 0, 16, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 123, 34, 105, 110, 102, 111, 34, 58, 91, 91, 48, 44, 49, 44, 50, 53, 44, 49, 54, 55, 55, 55, 50, 49, 53, 44, 49, 52, 56, 53, 53, 51, 54, 53, 50, 48, 44, 51, 54, 57, 55, 49, 56, 49, 57, 57, 44, 48, 44, 34, 57, 97, 55, 98, 48, 98, 48, 97, 34, 44, 48, 93, 44, 34, 98, 105, 108, 105, 98, 105, 108, 105, 45, 40, 227, 130, 156, 45, 227, 130, 156, 41, 227, 129, 164, 227, 131, 173, 228, 185, 190, 230, 157, 175, 126, 34, 44, 91, 50, 57, 52, 55, 57, 55, 50, 50, 44, 34, 232, 139, 143, 231, 180, 171, 231, 131, 159, 34, 44, 48, 44, 48, 44, 48, 44, 49, 48, 48, 48, 48, 44, 49, 93, 44, 91, 53, 44, 34, 231, 179, 150, 231, 186, 184, 34, 44, 34, 232, 167, 133, 231, 179, 150, 232, 143, 140, 34, 44, 50, 55, 51, 53, 51, 52, 44, 54, 57, 51, 53, 55, 57, 56, 93, 44, 91, 49, 51, 44, 48, 44, 54, 52, 48, 54, 50, 51, 52, 44, 34, 62, 53, 48, 48, 48, 48, 34, 93, 44, 91, 34, 116, 105, 116, 108, 101, 45, 53, 56, 45, 49, 34, 44, 34, 116, 105, 116, 108, 101, 45, 53, 56, 45, 49, 34, 93, 44, 48, 44, 48, 93, 44, 34, 99, 109, 100, 34, 58, 34, 68, 65, 78, 77, 85, 95, 77, 83, 71, 34, 125&#125;</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a><strong>数据处理</strong></h2><p>首先取当前数组的前16位，按字节数4 2 2 4 4分割当前数组，获得当前数据包的结构信息：<br><code>0 0 1 9</code> | <code>0 16</code> | <code>0 0</code> | <code>0 0 0 5</code> | <code>0 0 0 0</code><br>前16位的含义： <strong>数据包总长度</strong> | 未知 | 未知 | <strong>数据包类型</strong> | 未知</p>
+<p>下面是我们获得的数据包结构信息：<br>Data length: 0 0 1 9<br>Data type: 0 0 0 5<br>Data body length: (Data length - 16)<br>（减16表示减去数据包结构信息占用的字节数）</p>
+<p>首先，我们将unsigned char 数组的前四位取出来，对每一位执行一次十进制转十六进制操作：<br>0 -&gt; 00<br>0 -&gt; 00<br>1 -&gt; 01<br>9 -&gt; 09<br>然后将转换后的十六进制拼到一起，组成一个8位的十六进制：<br>0x00000109<br>这个8位十六进制就表示当前数据包的<strong>总长度</strong></p>
+<pre><code>  HEX     ---&gt;   DEC
+0x00000109       265
+</code></pre><p>显然，当前数据包的总长度为265个字节。</p>
+<p>我们如法炮制，将 unsigned char 数组开头的16个十进制数每一位都转换到十六进制后：<br><code>00000109</code> | <code>0010</code> | <code>0000</code> | <code>00000005</code> | <code>00000000</code><br>Data length: 0x00000109<br>Data type: 0x00000005<br>Data body length: (0x00000109 - 0x00000010)</p>
+<p>显然，数据包总大小为 265 字节， 数据包类型为5，实际数据大小为 249 字节</p>
+<blockquote>
+<p><strong>注意：</strong><br>    将10进制转换成16进制的过程中，如果转换出的16进制长度只有1位，务必在左边补零。（可能只有我的十进制转十六进制算法不会补全最左边的零）</p>
+<p><strong>举例：</strong><br>    0 0 2 5 -&gt; 00 00 01 05    <strong>√ 正确</strong>  组合后变成0x00000105<br>    0 0 2 5 -&gt; 0 0 2 5        <strong>× 错误</strong>  组合后变成 0x0025</p>
 </blockquote>
+<p>知道了实际数据大小后，我们就可以新建一个大小为 249 + 1 的 <code>unsigned char</code> 数组，然后按字节读取 socket 缓冲区中的数据。（大小之所以+1，是因为最后一位要放 ’\0’ ）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">unsigned char body[data_body_length + 1] = &#123; 0 &#125;;</div><div class="line">for(int i=0; i&lt;data_body_length; i++)</div><div class="line">&#123;</div><div class="line">    body[i] = read_from_buffer(); //从socket缓冲区中读取一个字节</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>body中实际数据：<br>{123, 34, 105, 110, 102, 111, 34, 58, 91, 91, 48, 44, 49, 44, 50, 53, 44, 49, 54, 55, 55, 55, 50, 49, 53, 44, 49, 52, 56, 53, 53, 51, 54, 53, 50, 48, 44, 51, 54, 57, 55, 49, 56, 49, 57, 57, 44, 48, 44, 34, 57, 97, 55, 98, 48, 98, 48, 97, 34, 44, 48, 93, 44, 34, 98, 105, 108, 105, 98, 105, 108, 105, 45, 40, 227, 130, 156, 45, 227, 130, 156, 41, 227, 129, 164, 227, 131, 173, 228, 185, 190, 230, 157, 175, 126, 34, 44, 91, 50, 57, 52, 55, 57, 55, 50, 50, 44, 34, 232, 139, 143, 231, 180, 171, 231, 131, 159, 34, 44, 48, 44, 48, 44, 48, 44, 49, 48, 48, 48, 48, 44, 49, 93, 44, 91, 53, 44, 34, 231, 179, 150, 231, 186, 184, 34, 44, 34, 232, 167, 133, 231, 179, 150, 232, 143, 140, 34, 44, 50, 55, 51, 53, 51, 52, 44, 54, 57, 51, 53, 55, 57, 56, 93, 44, 91, 49, 51, 44, 48, 44, 54, 52, 48, 54, 50, 51, 52, 44, 34, 62, 53, 48, 48, 48, 48, 34, 93, 44, 91, 34, 116, 105, 116, 108, 101, 45, 53, 56, 45, 49, 34, 44, 34, 116, 105, 116, 108, 101, 45, 53, 56, 45, 49, 34, 93, 44, 48, 44, 48, 93, 44, 34, 99, 109, 100, 34, 58, 34, 68, 65, 78, 77, 85, 95, 77, 83, 71, 34, 125}</p>
+<p>为了接下来的操作方便，我们将 body 转换为 string.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">string decode((char*)body);</div></pre></td></tr></table></figure>
+<p>输出一下 decode 的内容，发现这是一段 Json ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&quot;info&quot;:[[0,1,25,16777215,1485536520,369718199,0,&quot;9a7b0b0a&quot;,0],&quot;bilibili-(゜-゜)つロ乾杯~&quot;,[29479722,&quot;苏紫烟&quot;,0,0,0,10000,1],[5,&quot;糖纸&quot;,&quot;觅糖菌&quot;,273534,6935798],[13,0,6406234,&quot;&gt;50000&quot;],[&quot;title-58-1&quot;,&quot;title-58-1&quot;],0,0],&quot;cmd&quot;:&quot;DANMU_MSG&quot;&#125;</div></pre></td></tr></table></figure>
+<p>格式化后：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;info&quot;:[</div><div class="line">        [</div><div class="line">            0,</div><div class="line">            1,</div><div class="line">            25,</div><div class="line">            16777215,</div><div class="line">            1485536520,</div><div class="line">            369718199,</div><div class="line">            0,</div><div class="line">            &quot;9a7b0b0a&quot;,</div><div class="line">            0</div><div class="line">        ],</div><div class="line">        &quot;bilibili-(゜-゜)つロ乾杯~&quot;,</div><div class="line">        [</div><div class="line">            29479722,</div><div class="line">            &quot;苏紫烟&quot;,</div><div class="line">            0,</div><div class="line">            0,</div><div class="line">            0,</div><div class="line">            10000,</div><div class="line">            1</div><div class="line">        ],</div><div class="line">        [</div><div class="line">            5,</div><div class="line">            &quot;糖纸&quot;,</div><div class="line">            &quot;觅糖菌&quot;,</div><div class="line">            273534,</div><div class="line">            6935798</div><div class="line">        ],</div><div class="line">        [</div><div class="line">            13,</div><div class="line">            0,</div><div class="line">            6406234,</div><div class="line">            &quot;&gt;50000&quot;</div><div class="line">        ],</div><div class="line">        [</div><div class="line">            &quot;title-58-1&quot;,</div><div class="line">            &quot;title-58-1&quot;</div><div class="line">        ],</div><div class="line">        0,</div><div class="line">        0</div><div class="line">    ],</div><div class="line">    &quot;cmd&quot;:&quot;DANMU_MSG&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>知道了数据包装的是 Json 后，至于能做什么，你就自己想去吧。<del>（能做弹幕收集、礼物提醒之类的小程序）</del></p>
+<h2 id="附："><a href="#附：" class="headerlink" title="附："></a><strong>附：</strong></h2><p>cmd类型（我亲自捕捉的）：<br>DANMU_MSG<br>SEND_GIFT<br>SPECIAL_GIFT<br>SYS_GIFT<br>SYS_MSG<br>WELCOME<br>WELCOME_GUARD<br>GUARD_MSG<br>CHANGE_ROOM_INFO<br>LIVE<br>PREPARING</p>
+<h2 id="未经允许禁止转载！"><a href="#未经允许禁止转载！" class="headerlink" title="未经允许禁止转载！"></a><strong>未经允许禁止转载！</strong></h2><h2 id="欢迎在评论区吐槽！"><a href="#欢迎在评论区吐槽！" class="headerlink" title="欢迎在评论区吐槽！"></a><strong>欢迎在评论区吐槽！</strong></h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近心血来潮想连接到B站的弹幕池，于是反编译了弹幕姬和直播姬，找到了以下关键代码，遂记之。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Programming" scheme="http://www.junyi.pw/categories/Programming/"/>
+    
+    
+      <category term="C++" scheme="http://www.junyi.pw/tags/C/"/>
+    
+      <category term="Bilibili" scheme="http://www.junyi.pw/tags/Bilibili/"/>
+    
+      <category term="Socket" scheme="http://www.junyi.pw/tags/Socket/"/>
+    
+      <category term="教程" scheme="http://www.junyi.pw/tags/%E6%95%99%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>first</title>
+    <link href="http://www.junyi.pw/2017/04/30/first/"/>
+    <id>http://www.junyi.pw/2017/04/30/first/</id>
+    <published>2017-04-30T07:27:08.000Z</published>
+    <updated>2017-04-30T07:44:42.224Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Hello！"><a href="#Hello！" class="headerlink" title="Hello！"></a>Hello！</h1><div class="note default"><p>Content (md partial supported)</p>
+</div>
+<div class="note primary"><p>Content (md partial supported)</p>
+</div>
 <a id="more"></a>
-<h3 id="2038年1月19日会发生什么？"><a href="#2038年1月19日会发生什么？" class="headerlink" title="2038年1月19日会发生什么？"></a><strong>2038年1月19日会发生什么</strong>？</h3><blockquote>
-<p>在2038年1月19日，由于32位整形溢出，Unix时间戳会停止工作。在这个大灾难前，数百万计的应用程序采取新的约定时间的方式，要么升级到64位版本。</p>
-</blockquote>
-<h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a><strong>代码示例</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//Code::Blocks 编译通过；需开启 &quot;-std=c++11&quot; 编译开关</div><div class="line">#include &lt;ctime&gt;</div><div class="line">#include &lt;iostream&gt;</div><div class="line"></div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">    std::time_t result = std::time(nullptr);</div><div class="line">    std::cout &lt;&lt; std::asctime(std::localtime(&amp;result))</div><div class="line">              &lt;&lt; result &lt;&lt; &quot; seconds since the Epoch\n&quot;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="运行结果："><a href="#运行结果：" class="headerlink" title="运行结果："></a>运行结果：</h3><blockquote>
-<p>Sun Nov 22 11:48:58 2015<br>1448164138 seconds since the Epoch</p>
-</blockquote>
-<p>之所以开启”-std=c++11”编译开关的原因是因为nullptr是<strong>C++11</strong>语言标准用来表示空指针的常量值。</p>
-<p>不使用C++11标准的话，你还可以这样写：</p>
-<figure class="highlight c"><figcaption><span>++</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//Code::Blocks编译通过</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;ctime&gt;</span></span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="built_in">std</span>::<span class="keyword">time_t</span> t = <span class="built_in">std</span>::time(<span class="number">0</span>);  <span class="comment">// t is an integer type</span></div><div class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; t &lt;&lt; <span class="string">" seconds since 01-Jan-1970\n"</span>;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>代码引用自 <a href="http://stackoverflow.com/questions/6012663/get-unix-timestamp-with-c" target="_blank" rel="external">Get Unix timestamp with C++</a></p>
+<div class="note success"><p>Content (md partial supported) </p>
+</div>
+<div class="note info"><p>Content (md partial supported) </p>
+</div>
+<div class="note warning"><p>Content (md partial supported) </p>
+</div>
+<div class="note danger"><p>Content (md partial supported) </p>
+</div>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;什么是Unix时间戳？&quot;&gt;&lt;a href=&quot;#什么是Unix时间戳？&quot; class=&quot;headerlink&quot; title=&quot;什么是Unix时间戳？&quot;&gt;&lt;/a&gt;&lt;strong&gt;什么是Unix时间戳&lt;/strong&gt;？&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;Unix时间戳(Unix timestamp)，或称Unix时间(Unix time)、POSIX时间(POSIX time)，是一种时间表示方式，定义为从&lt;strong&gt;格林威治时间1970年01月01日00时00分00秒&lt;/strong&gt;起至现在的总秒数。Unix时间戳不仅被使用在Unix系统、类Unix系统中，也在许多其他操作系统中被广泛采用&lt;/p&gt;
-&lt;/blockquote&gt;
+      &lt;h1 id=&quot;Hello！&quot;&gt;&lt;a href=&quot;#Hello！&quot; class=&quot;headerlink&quot; title=&quot;Hello！&quot;&gt;&lt;/a&gt;Hello！&lt;/h1&gt;&lt;div class=&quot;note default&quot;&gt;&lt;p&gt;Content (md partial supported)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;note primary&quot;&gt;&lt;p&gt;Content (md partial supported)&lt;/p&gt;
+&lt;/div&gt;
     
     </summary>
     
+      <category term="Coding" scheme="http://www.junyi.pw/categories/Coding/"/>
     
-      <category term="C++" scheme="http://yoursite.com/tags/C/"/>
     
-      <category term="编程" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A8%8B/"/>
+      <category term="a" scheme="http://www.junyi.pw/tags/a/"/>
+    
+      <category term="b" scheme="http://www.junyi.pw/tags/b/"/>
     
   </entry>
   
   <entry>
-    <title>My Hello World!</title>
-    <link href="http://yoursite.com/2016/07/30/My-Hello-World/"/>
-    <id>http://yoursite.com/2016/07/30/My-Hello-World/</id>
-    <published>2016-07-30T08:16:05.000Z</published>
-    <updated>2016-07-30T10:56:06.353Z</updated>
+    <title>Hello World</title>
+    <link href="http://www.junyi.pw/2017/04/30/hello-world/"/>
+    <id>http://www.junyi.pw/2017/04/30/hello-world/</id>
+    <published>2017-04-30T05:11:53.345Z</published>
+    <updated>2017-04-30T07:32:47.012Z</updated>
     
-    <content type="html"><![CDATA[<p>###Hi Human<br>I am a robot. </p>
-<p>233不开玩笑了 </p>
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><a id="more"></a>
+<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;###Hi Human&lt;br&gt;I am a robot. &lt;/p&gt;
-&lt;p&gt;233不开玩笑了 &lt;/p&gt;
-
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;
     
     </summary>
     
-      <category term="one" scheme="http://yoursite.com/categories/one/"/>
-    
-      <category term="two" scheme="http://yoursite.com/categories/one/two/"/>
-    
-    
-      <category term="PS2" scheme="http://yoursite.com/tags/PS2/"/>
-    
-      <category term="Games" scheme="http://yoursite.com/tags/Games/"/>
     
   </entry>
   

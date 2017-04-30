@@ -1,0 +1,903 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next pisces" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="C++,Algorithm," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Junyi 的实验室" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="心血来潮，自己瞎搞出来了一个遗传算法。 背景介绍： 　　一个种群有100个个体，每个个体只有一条染色体，每条染色体上只有一条DNA链（或许叫RNA更合适），每条链有344个基因 没有碱基互补配对  突变率 0.02 ，每次突变将翻转 8 个基因 （ 像这样 0010001001101 -&amp;gt; 0010010110010）  （因为 8 个基因决定一个表现型（字母））  每次从群体中按轮盘赌随机">
+<meta name="keywords" content="C++,Algorithm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="瞎写的遗传算法 [GA]">
+<meta property="og:url" content="http://www.junyi.pw/2017/04/30/GeneticAlgorithm/index.html">
+<meta property="og:site_name" content="Junyi 的实验室">
+<meta property="og:description" content="心血来潮，自己瞎搞出来了一个遗传算法。 背景介绍： 　　一个种群有100个个体，每个个体只有一条染色体，每条染色体上只有一条DNA链（或许叫RNA更合适），每条链有344个基因 没有碱基互补配对  突变率 0.02 ，每次突变将翻转 8 个基因 （ 像这样 0010001001101 -&amp;gt; 0010010110010）  （因为 8 个基因决定一个表现型（字母））  每次从群体中按轮盘赌随机">
+<meta property="og:updated_time" content="2017-04-30T08:35:48.417Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="瞎写的遗传算法 [GA]">
+<meta name="twitter:description" content="心血来潮，自己瞎搞出来了一个遗传算法。 背景介绍： 　　一个种群有100个个体，每个个体只有一条染色体，每条染色体上只有一条DNA链（或许叫RNA更合适），每条链有344个基因 没有碱基互补配对  突变率 0.02 ，每次突变将翻转 8 个基因 （ 像这样 0010001001101 -&amp;gt; 0010010110010）  （因为 8 个基因决定一个表现型（字母））  每次从群体中按轮盘赌随机">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.junyi.pw/2017/04/30/GeneticAlgorithm/"/>
+
+
+
+
+
+  <title>瞎写的遗传算法 [GA] | Junyi 的实验室</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1260025159&web_id=1260025159" language="JavaScript"></script>
+  </div>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Junyi 的实验室</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">有趣的灵魂终将相遇</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://www.junyi.pw/2017/04/30/GeneticAlgorithm/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Junyi">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Junyi 的实验室">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                瞎写的遗传算法 [GA]
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-30T16:23:50+08:00">
+                2017-04-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Coding/" itemprop="url" rel="index">
+                    <span itemprop="name">Coding</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/2017/04/30/GeneticAlgorithm/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  1,131
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>心血来潮，自己瞎搞出来了一个遗传算法。</p>
+<h2 id="背景介绍："><a href="#背景介绍：" class="headerlink" title="背景介绍："></a>背景介绍：</h2><p> 　　一个种群有100个个体，每个个体只有一条染色体，每条染色体上只有一条DNA链（或许叫RNA更合适），每条链有344个基因 没有碱基互补配对</p>
+<p> 突变率 0.02 ，每次突变将翻转 8 个基因 （ 像这样 00100<code>01001101</code> -&gt; 00100<code>10110010</code>）</p>
+<p> （因为 8 个基因决定一个表现型（字母））</p>
+<p> 每次从群体中按轮盘赌随机杀死一个个体，</p>
+<a id="more"></a>
+<p> 只让群体中最优秀的基因有产生后代的机会，每次只产生一个后代。除了轮盘赌杀死的个体，没有自然死亡</p>
+<p> 没有种间斗争 没有自然灾害</p>
+<p> 参数调的好的话，迭代次数大概 3000 次左右就出来了最终结果：</p>
+<p> The quick browm fox jumps over the lazy dog</p>
+<h2 id="Chromosome-h"><a href="#Chromosome-h" class="headerlink" title="Chromosome.h"></a>Chromosome.h</h2> <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">pragma</span> once</span></div><div class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> Chromosome_H_</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> Chromosome_H_</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> GENE_LENGTH 344</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> random(x) (rand()%x)</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Chromosome</span> &#123;</span></div><div class="line"><span class="keyword">public</span>:</div><div class="line">	<span class="keyword">bool</span> gene[GENE_LENGTH];</div><div class="line">	<span class="keyword">size_t</span> gene_length;</div><div class="line">	~Chromosome()</div><div class="line">	&#123;&#125;</div><div class="line">	Chromosome()</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i&lt;<span class="number">344</span>; i++)</div><div class="line">		&#123;</div><div class="line">			gene[i] = random(<span class="number">2</span>);</div><div class="line">		&#125;</div><div class="line">		gene_length = GENE_LENGTH;</div><div class="line">		fitness = <span class="number">999</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">int</span> <span class="title">getGeneLength</span><span class="params">()</span></span></div><div class="line">	&#123;</div><div class="line">		<span class="keyword">return</span> GENE_LENGTH;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">mutation</span><span class="params">(Chromosome &amp;chrom, <span class="keyword">int</span> mutation_max_step)</span></span></div><div class="line">	&#123;</div><div class="line">		<span class="keyword">int</span> mut_pos = <span class="number">0</span>;</div><div class="line">		<span class="keyword">int</span> mut_num = <span class="number">0</span>;</div><div class="line">		mut_pos = random(chrom.getGeneLength());</div><div class="line">		mut_num = random(mutation_max_step);</div><div class="line">		<span class="keyword">if</span> ((<span class="keyword">unsigned</span> <span class="keyword">int</span>)(mut_pos + mut_num) &gt; chrom.gene_length)</div><div class="line">		&#123;</div><div class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = mut_pos + mut_num; i&gt;mut_pos; i--)</div><div class="line">			&#123;</div><div class="line">				chrom.gene[i] = !chrom.gene[i];</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">else</span></div><div class="line">		&#123;</div><div class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = mut_pos; i&lt;mut_pos + mut_num; i++)</div><div class="line">			&#123;</div><div class="line">				chrom.gene[i] = !chrom.gene[i];</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">crossover</span><span class="params">(Chromosome &amp;chrom1, Chromosome &amp;chrom2)</span></span></div><div class="line">	&#123;</div><div class="line">		<span class="keyword">int</span> rand_pos = <span class="number">0</span>;</div><div class="line">		<span class="keyword">int</span> rand_num = <span class="number">0</span>;</div><div class="line"></div><div class="line">		rand_pos = random(chrom1.gene_length); <span class="comment">// 发生交叉互换的位置</span></div><div class="line">		rand_num = random(<span class="number">32</span>); <span class="comment">// 交叉互换的基因片段长度</span></div><div class="line"></div><div class="line">		<span class="keyword">bool</span> type = <span class="number">0</span>; <span class="comment">// 0 - 向后交叉; 1 - 向前交叉</span></div><div class="line">		<span class="keyword">if</span> ((<span class="keyword">unsigned</span> <span class="keyword">int</span>)(rand_pos + rand_num) &gt; chrom1.gene_length)</div><div class="line">			type = <span class="number">1</span>;</div><div class="line"></div><div class="line">		<span class="keyword">bool</span> tempA = <span class="number">0</span>, tempB = <span class="number">0</span>, tempC = <span class="number">0</span>;</div><div class="line">		<span class="keyword">if</span> (type == <span class="number">0</span>)</div><div class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = rand_pos; i&lt;rand_pos + rand_num; i++)</div><div class="line">			&#123;</div><div class="line">				tempA = chrom1.gene[i];</div><div class="line">				tempB = chrom2.gene[i];</div><div class="line">				tempC = tempA;</div><div class="line">				tempA = tempB;</div><div class="line">				tempB = tempC;</div><div class="line">			&#125;</div><div class="line">		<span class="keyword">else</span></div><div class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = rand_pos + rand_num; i&gt;rand_pos; i--)</div><div class="line">			&#123;</div><div class="line">				tempA = chrom1.gene[i];</div><div class="line">				tempB = chrom2.gene[i];</div><div class="line">				tempC = tempA;</div><div class="line">				tempA = tempB;</div><div class="line">				tempB = tempC;</div><div class="line">			&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">unsigned</span> <span class="keyword">char</span>&gt; decode()</div><div class="line">	&#123;</div><div class="line">		<span class="comment">// 8 bit</span></div><div class="line">		<span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">unsigned</span> <span class="keyword">char</span>&gt; result;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">unsigned</span> <span class="keyword">int</span> i = <span class="number">0</span>; i&lt;(GENE_LENGTH / <span class="number">8</span>); i++)</div><div class="line">		&#123;</div><div class="line">			<span class="keyword">bool</span> a[<span class="number">8</span>] = &#123; <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span> &#125;;</div><div class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j&lt;<span class="number">8</span>; j++)</div><div class="line">				a[j] = gene[i * <span class="number">8</span> + j];</div><div class="line"></div><div class="line">			result.push_back(bin2dec(a, <span class="number">8</span>));</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> result;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">virtual</span> ~Chromosome();</div><div class="line">	<span class="keyword">double</span> fitness;</div><div class="line"><span class="keyword">private</span>:</div><div class="line">	<span class="function"><span class="keyword">int</span> <span class="title">bin2dec</span><span class="params">(<span class="keyword">bool</span> a[], <span class="keyword">int</span> a_length)</span></span></div><div class="line">	&#123;</div><div class="line">		<span class="keyword">int</span> result = <span class="number">0</span>;</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = a_length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)</div><div class="line">		&#123;</div><div class="line">			<span class="keyword">if</span> (a[i])</div><div class="line">				result += <span class="built_in">pow</span>(<span class="number">2</span>, i - <span class="number">1</span>);</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> result;</div><div class="line">	&#125;</div><div class="line">	<span class="comment">// The quick brown fox jumps over the lazy dog</span></div><div class="line"></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/* Chromosome_H_ */</span></span></div></pre></td></tr></table></figure>
+<h2 id="GeAlg-h"><a href="#GeAlg-h" class="headerlink" title="GeAlg.h"></a>GeAlg.h</h2> <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">pragma</span> once</span></div><div class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> GEALG_H_</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> GEALG_H_</span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"Chromosome.h"</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">GeAlg</span> &#123;</span></div><div class="line"><span class="keyword">public</span>:</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">select</span><span class="params">()</span></span>; <span class="comment">// 自然选择</span></div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">fitness</span><span class="params">()</span></span>; <span class="comment">// 生物竞争</span></div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">next_generation</span><span class="params">()</span></span>; <span class="comment">// 产生下一代</span></div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">calc</span><span class="params">()</span></span>;</div><div class="line">	<span class="function"><span class="keyword">int</span> <span class="title">size</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123; <span class="keyword">return</span> pop.size(); &#125;</div><div class="line">	<span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span></div><div class="line">	&#123;</div><div class="line">		<span class="keyword">unsigned</span> <span class="keyword">char</span> a[<span class="number">100</span>] = &#123; <span class="number">0</span> &#125;;</div><div class="line">		<span class="built_in">vector</span>&lt;<span class="keyword">unsigned</span> <span class="keyword">char</span>&gt; decode = best_one.decode();</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">size_t</span> i = <span class="number">0</span>; i&lt;decode.size(); i++)</div><div class="line">		&#123;</div><div class="line">			a[i] = decode[i];</div><div class="line">		&#125;</div><div class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"进化代数:"</span> &lt;&lt; generation &lt;&lt; <span class="string">" 适应度:"</span> &lt;&lt; best_fitness &lt;&lt; <span class="string">" 表现型："</span> &lt;&lt; a &lt;&lt; <span class="built_in">endl</span>;</div><div class="line">	&#125;</div><div class="line">	GeAlg(<span class="keyword">int</span> size, <span class="keyword">double</span> mutation, <span class="keyword">double</span> crossover, <span class="keyword">int</span> mutation_max_step);</div><div class="line">	<span class="keyword">virtual</span> ~GeAlg();</div><div class="line"><span class="keyword">private</span>:</div><div class="line">	<span class="function"><span class="keyword">double</span> <span class="title">calc_fitness</span><span class="params">(<span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">unsigned</span> <span class="keyword">char</span>&gt; decoded)</span></span>;</div><div class="line">	<span class="keyword">double</span> total_fitness;<span class="comment">// 种群总适应度（所有个体适应度的和）</span></div><div class="line">	<span class="keyword">double</span> best_fitness;<span class="comment">// 最适应个体的适应度</span></div><div class="line">	Chromosome best_one;<span class="comment">// 最好的个体的基因</span></div><div class="line">	<span class="keyword">double</span> average_fitness;<span class="comment">// 平均适应度</span></div><div class="line">	<span class="keyword">double</span> worst_fitness;<span class="comment">// 最坏的个体</span></div><div class="line">	<span class="keyword">double</span> mutation;<span class="comment">// 突变率</span></div><div class="line">	<span class="keyword">int</span> mutation_max_step;<span class="comment">// 最多突变多少基因</span></div><div class="line">	<span class="keyword">double</span> crossover;<span class="comment">// 交叉互换率</span></div><div class="line">	<span class="keyword">int</span> generation;<span class="comment">// 进化代数</span></div><div class="line">	<span class="built_in">std</span>::<span class="built_in">vector</span>&lt;Chromosome&gt; pop;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/* GEALG_H_ */</span></span></div></pre></td></tr></table></figure>
+<h2 id="GeAlg-cpp"><a href="#GeAlg-cpp" class="headerlink" title="GeAlg.cpp"></a>GeAlg.cpp</h2> <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdafx.h"</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;tchar.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"GeAlg.h"</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></div><div class="line"></div><div class="line"><span class="keyword">void</span> GeAlg::next_generation()</div><div class="line">&#123;</div><div class="line">	generation++;</div><div class="line"></div><div class="line">	<span class="keyword">int</span> rand_pos1 = random(pop.size());</div><div class="line">	<span class="keyword">int</span> rand_pos2 = random(pop.size());</div><div class="line">	<span class="keyword">if</span> (rand_pos1 == rand_pos2)</div><div class="line">		rand_pos2++;</div><div class="line"></div><div class="line">	Chromosome father = best_one;</div><div class="line">	Chromosome mother = best_one;</div><div class="line">	<span class="comment">/*Chromosome child1, child2;</span></div><div class="line">	for(int i=0; i&lt;father.gene_length/2; i++)</div><div class="line">	&#123;</div><div class="line">	child1.gene[i] = father.gene[i];</div><div class="line">	child2.gene[i] = mother.gene[i];</div><div class="line">	&#125;</div><div class="line">	for(int i=mother.gene_length; i&lt;mother.gene_length; i++)</div><div class="line">	&#123;</div><div class="line">	child1.gene[i] = mother.gene[i];</div><div class="line">	child2.gene[i] = father.gene[i];</div><div class="line">	&#125;*/</div><div class="line">	<span class="keyword">double</span> mut_rand = (<span class="keyword">double</span>)random(<span class="number">100</span>) / <span class="number">100.0</span>;</div><div class="line">	<span class="keyword">if</span> (mut_rand &gt; mutation)</div><div class="line">	&#123;</div><div class="line">		father.mutation(father, mutation_max_step);</div><div class="line">	&#125;</div><div class="line">	mut_rand = (<span class="keyword">double</span>)random(<span class="number">100</span>) / <span class="number">100.0</span>;</div><div class="line">	<span class="keyword">if</span> (mut_rand &gt; mutation)</div><div class="line">	&#123;</div><div class="line">		mother.mutation(mother, mutation_max_step);</div><div class="line">	&#125;</div><div class="line"></div><div class="line"></div><div class="line">	pop.push_back(father);</div><div class="line">	<span class="comment">//pop.push_back(mother);</span></div><div class="line">	<span class="comment">//pop.push_back(child1);</span></div><div class="line">	<span class="comment">//pop.push_back(child2);</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">void</span> GeAlg::select()</div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> slice = random((<span class="keyword">int</span>)total_fitness);</div><div class="line">	<span class="keyword">double</span> fitness = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="built_in">vector</span>&lt;Chromosome&gt;::iterator it = pop.begin(); it != pop.end(); it++)</div><div class="line">	&#123;</div><div class="line">		fitness += it-&gt;fitness;</div><div class="line">		<span class="keyword">if</span> (fitness &gt; slice)</div><div class="line">		&#123;</div><div class="line">			pop.erase(it);</div><div class="line">			<span class="keyword">break</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">void</span> GeAlg::calc()</div><div class="line">&#123;</div><div class="line">	best_fitness = <span class="number">99999</span>;</div><div class="line">	total_fitness = <span class="number">0</span>;</div><div class="line">	worst_fitness = <span class="number">0</span>;</div><div class="line">	best_one = Chromosome();</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">size_t</span> i = <span class="number">0</span>; i&lt;pop.size(); i++)</div><div class="line">	&#123;</div><div class="line">		pop[i].fitness = calc_fitness(pop[i].decode());</div><div class="line">		total_fitness += pop[i].fitness;</div><div class="line">		<span class="keyword">if</span> (pop[i].fitness &lt; best_fitness)</div><div class="line">		&#123;</div><div class="line">			best_fitness = pop[i].fitness;</div><div class="line">			best_one = pop[i];</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span> (pop[i].fitness &gt; worst_fitness)</div><div class="line">		&#123;</div><div class="line">			worst_fitness = pop[i].fitness;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	average_fitness = total_fitness / pop.size();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">double</span> GeAlg::calc_fitness(<span class="built_in">std</span>::<span class="built_in">vector</span>&lt;<span class="keyword">unsigned</span> <span class="keyword">char</span>&gt; decoded)</div><div class="line">&#123;</div><div class="line">	<span class="comment">//unsigned char text[] = "Hello world! I am fine thank you and you???";</span></div><div class="line">	<span class="keyword">unsigned</span> <span class="keyword">char</span> text[] = <span class="string">"The quick brown fox jumps over the lazy dog"</span>;</div><div class="line">	<span class="keyword">double</span> fitness = <span class="number">0</span>;</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">size_t</span> i = <span class="number">0</span>; i&lt;decoded.size(); i++)</div><div class="line">	&#123;</div><div class="line">		fitness += <span class="built_in">std</span>::<span class="built_in">abs</span>(decoded[i] - text[i]);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> fitness;</div><div class="line">&#125;</div><div class="line"></div><div class="line">GeAlg::GeAlg(<span class="keyword">int</span> size, <span class="keyword">double</span> mutation, <span class="keyword">double</span> crossover, <span class="keyword">int</span> mutation_max_step) &#123;</div><div class="line">	<span class="comment">// TODO Auto-generated constructor stub</span></div><div class="line">	<span class="keyword">this</span>-&gt;total_fitness = <span class="number">0</span>;</div><div class="line">	<span class="keyword">this</span>-&gt;best_fitness = <span class="number">0</span>;</div><div class="line">	<span class="keyword">this</span>-&gt;average_fitness = <span class="number">0</span>;</div><div class="line">	<span class="keyword">this</span>-&gt;worst_fitness = <span class="number">999999</span>;</div><div class="line">	<span class="keyword">this</span>-&gt;mutation = mutation;</div><div class="line">	<span class="keyword">this</span>-&gt;mutation_max_step = mutation_max_step;</div><div class="line">	<span class="keyword">this</span>-&gt;crossover = crossover;</div><div class="line">	<span class="keyword">this</span>-&gt;generation = <span class="number">0</span>;</div><div class="line">	pop.clear();</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i&lt;size; i++)</div><div class="line">	&#123;</div><div class="line">		pop.push_back(Chromosome());</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">GeAlg::~GeAlg() &#123;</div><div class="line">	<span class="comment">// TODO Auto-generated destructor stub</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="main-cpp"><a href="#main-cpp" class="headerlink" title="main.cpp"></a>main.cpp</h2> <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdafx.h"</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ctime&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"GeAlg.h"</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"Chromosome.h"</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> random(x) (rand()%x)</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">start</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">	GeAlg *ga = <span class="keyword">new</span> GeAlg(<span class="number">100</span>, <span class="number">0.2</span>, <span class="number">0.0001</span>, <span class="number">8</span>);</div><div class="line">	ga-&gt;calc();</div><div class="line">	</div><div class="line">	<span class="keyword">while</span> (<span class="number">1</span>)</div><div class="line">	&#123;</div><div class="line">		</div><div class="line">		<span class="comment">//while (ga-&gt;size() - 100 &gt; 0)</span></div><div class="line">		<span class="comment">//&#123;</span></div><div class="line">			<span class="comment">//ga-&gt;select();</span></div><div class="line">			<span class="comment">//ga-&gt;calc();</span></div><div class="line">		<span class="comment">//&#125;</span></div><div class="line">		</div><div class="line">		ga-&gt;select();</div><div class="line">		ga-&gt;calc();</div><div class="line">		ga-&gt;print();</div><div class="line">		ga-&gt;next_generation();</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">	srand(time(<span class="number">0</span>));</div><div class="line">	start();</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat-reward-image.png" alt="Junyi WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay-reward-image.jpg" alt="Junyi Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      Junyi
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://www.junyi.pw/2017/04/30/GeneticAlgorithm/" title="瞎写的遗传算法 [GA]">http://www.junyi.pw/2017/04/30/GeneticAlgorithm/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-ND 4.0</a> 进行许可。 微信公众号等平台默认被视为商业行为，转载前务必与作者联系并取得书面许可。
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/C/" rel="tag"># C++</a>
+          
+            <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/30/unixtimestamp/" rel="next" title="如何获取Unix时间戳 [C++]">
+                <i class="fa fa-chevron-left"></i> 如何获取Unix时间戳 [C++]
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/30/mypast/" rel="prev" title="我过去的经历">
+                我过去的经历 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="Junyi" />
+          <p class="site-author-name" itemprop="name">Junyi</p>
+           
+              <p class="site-description motion-element" itemprop="description">Woo~ Amazing!</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Military-Doctor/" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Military-Doctor/" target="_blank" title="WeiBo">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  WeiBo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              小伙伴们
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.hbrw.in/" title="HBRW's Boxes" target="_blank">HBRW's Boxes</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://i.hstb1230.com/" title="Hstb的小世界" target="_blank">Hstb的小世界</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://srun.in/" title="梦阳的后宫" target="_blank">梦阳的后宫</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景介绍："><span class="nav-number">1.</span> <span class="nav-text">背景介绍：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chromosome-h"><span class="nav-number">2.</span> <span class="nav-text">Chromosome.h</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GeAlg-h"><span class="nav-number">3.</span> <span class="nav-text">GeAlg.h</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GeAlg-cpp"><span class="nav-number">4.</span> <span class="nav-text">GeAlg.cpp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#main-cpp"><span class="nav-number">5.</span> <span class="nav-text">main.cpp</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Junyi</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "85bede229699410085d50e5028a80cac",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
